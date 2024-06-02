@@ -5,15 +5,18 @@ import img3 from "../../images/3.jpg"
 
 const Building = () => {
     return (
-        <div>
+        <div className="max-w-7xl mx-auto px-4">
+
             <div className="text-center pt-14">
                 <h1 className="text-3xl font-bold uppercase">About building</h1>
-                <p>Efficient building management ensures safe, <br /> sustainable, and comfortable environments through proactive  <br/>
-                maintenance, energy management, and advanced technology integration.</p>
+                <p className="text-balance">Efficient building management ensures safe, <br /> sustainable, and comfortable environments through <br /> proactive  
+                maintenance, energy management,<br/> and advanced technology integration.</p>
             </div>
+
             <section className="py-6">
-                <div className="md:container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
-                    <div className="w-full md:h-full col-span-2 md:row-span-2 md:min-h-96 md:col-start-3 md:row-start-1 aspect-square">
+                <div className="flex flex-col lg:flex-row-reverse gap-8">
+
+                    <div className="lg:w-1/2">
 
                        <ul className="list-disc p-6 space-y-5 mt-4">
 
@@ -31,10 +34,14 @@ const Building = () => {
                        </ul>
 
                     </div>
-                    <img alt="" className="w-full h-full rounded shadow-sm min-h-48 aspect-square" src="https://images.unsplash.com/photo-1542447139-dea0a6257cee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8QXJjaGl0ZWN0dXJhbCUyMEV4Y2VsbGVuY2V8ZW58MHx8MHx8fDA%3D" />
-                    <img alt="" className="w-full h-full rounded shadow-sm min-h-48 aspect-square" src={img1} />
-                    <img alt="" className="w-full h-full rounded shadow-sm min-h-48 aspect-square" src={img2} />
-                    <img alt="" className="w-full h-full rounded shadow-sm min-h-48 aspect-square" src={img3} />
+
+                    <div className="grid grid-cols-2 gap-6 lg:w-1/2">
+                    <img alt="" className="w-full  rounded shadow-sm h-72 aspect-square" src="https://images.unsplash.com/photo-1542447139-dea0a6257cee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8QXJjaGl0ZWN0dXJhbCUyMEV4Y2VsbGVuY2V8ZW58MHx8MHx8fDA%3D" />
+                    <img alt="" className="w-full  rounded shadow-sm h-72 aspect-square" src={img1} />
+                    <img alt="" className="w-full  rounded shadow-sm h-72 aspect-square" src={img2} />
+                    <img alt="" className="w-full  rounded shadow-sm h-72 aspect-square" src={img3} />
+                    </div>
+
                 </div>
             </section>
         </div>

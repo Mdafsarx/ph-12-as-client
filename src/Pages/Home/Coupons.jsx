@@ -31,7 +31,7 @@ const Coupons = () => {
 
             {/* coupon ui */}
 
-            <section className="grid md:grid-cols-2 gap-6 mx-4 md:mx-40">
+            <section className="grid md:grid-cols-2 gap-6 mx-4 lg:mx-40">
 
                 <div className=" h-52 flex items-center  gap-8 shadow-2xl border">
                     <div className="text-center pl-8">

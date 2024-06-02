@@ -1,28 +1,53 @@
-/* eslint-disable react/no-unescaped-entities */
-// import "./Aparment.css"
+import { useState, useEffect } from 'react';
+import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
 
+delete L.Icon.Default.prototype._getIconUrl;
+
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+});
 
 const MyApartment = () => {
-    return (
-        <div>
-            <section id="location">
-  <h2>Our Location</h2>
-  <p>OneBuild is conveniently located in the heart of the city, surrounded by key landmarks and accessible by various modes of transportation. Visit us at:</p>
-  <p><strong>123 Main Street, Cityville, State, ZIP Code</strong></p>
-  <p>Nearby landmarks include the Central Park, Cityville Museum, and the Grand Mall. Easily accessible via the A1 Highway and the Cityville Metro Station.</p>
-  <div id="map-container">
-    <img src="path/to/map-image.jpg" alt="Map showing the location of OneBuild"/>
-  </div>
-  <p>Directions:</p>
-  <ul>
-    <li><strong>By Car:</strong> Take the A1 Highway, exit at Main Street, and continue straight for 2 miles. Our building will be on your right.</li>
-    <li><strong>By Public Transport:</strong> Take the Cityville Metro to Central Station. From there, it's a 10-minute walk south along Main Street.</li>
-    <li><strong>By Foot:</strong> If you're already in the downtown area, simply head towards Central Park and you'll find us just two blocks away.</li>
-  </ul>
-</section>
+  const [position, setPosition] = useState([51.505, -0.09]);
 
-        </div>
+  const LocationMarker = () => {
+    const map = useMap();
+
+    useEffect(() => {
+      navigator.geolocation.getCurrentPosition((pos) => {
+        const { latitude, longitude } = pos.coords;
+        const newPosition = [latitude, longitude];
+        setPosition(newPosition);
+        map.setView(newPosition, 13);
+      });
+    }, [map]);
+
+    return (
+      position && (
+        <Marker position={position}>
+        </Marker>
+      )
     );
+  };
+
+  return (
+    <div className=''>
+      <div className='w-full relative z-30 '>
+        <MapContainer center={position} zoom={13} scrollWheelZoom={false} style={{ height: '50vh', width: '100%'}}>
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <LocationMarker />
+        </MapContainer>
+      </div>
+
+    </div>
+  );
 };
 
 export default MyApartment;

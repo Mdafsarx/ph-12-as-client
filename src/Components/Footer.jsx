@@ -4,7 +4,7 @@ import { IoCall } from "react-icons/io5";
 import Swal from "sweetalert2";
 const Footer = () => {
     return (
-        <div className="pt-10 bg-black">
+        <div className="bg-black">
             <footer className="footer p-10  text-white md:pl-40">
 
                 <nav>
@@ -60,7 +60,7 @@ const Footer = () => {
             </footer>
             {/* wave svg */}
             <div>
-                <img src={img1} className="h-40 w-full " />
+                <img src={img1} className="h-40 w-full" />
             </div>
         </div>
     );

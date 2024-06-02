@@ -10,11 +10,11 @@ const Nav = () => {
 
     const navLink =
         <>
-            <NavLink className={'flex flex-col justify-center text-white items-center'}>
+            <NavLink className={'flex flex-col justify-center text-white items-center'} to={'/'}>
                 <BiHome className="text-sm text-[#7EA1FF]" /><span className="text-xs uppercase font-bold">HOME</span>
             </NavLink>
 
-            <NavLink className={'flex flex-col justify-center text-white items-center'}>
+            <NavLink className={'flex flex-col justify-center text-white items-center'} to={'/apartment'}>
                 <MdApartment className="text-sm text-[#7EA1FF]" />
                 <span className="text-xs uppercase font-bold">Apartment</span>
             </NavLink>
@@ -22,7 +22,7 @@ const Nav = () => {
 
 
     return (
-        <div className=" ">
+        <div>
             <section className=" bg-black opacity-85 relative md:fixed  w-full z-40">
                 <div className="navbar max-w-7xl mx-auto">
                     <div className="navbar-start">

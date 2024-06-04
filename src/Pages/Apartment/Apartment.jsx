@@ -1,70 +1,64 @@
 import { GrCaretNext, GrCaretPrevious } from "react-icons/gr";
 import ApartmentBanner from "./ApartmentBanner";
 import ApartmentCard from "./ApartmentCard";
-import  {  useState } from 'react';
+import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import './button.css'
-
-// Example items, to simulate fetching from another resources.
-const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+import { useQuery } from "@tanstack/react-query";
+import CommonUrl from "../../Hooks/CommonUrl";
 
 
 
 const Apartment = () => {
+    const axiosUrl = CommonUrl();
+    // data load here
+    const { data: Data = [] } = useQuery({
+        queryKey: ['apartment'],
+        queryFn: async () => {
+            const res = await axiosUrl('/apartment');
+            return res.data
+        }
+
+    })
+
+    const pageCount = Math.ceil(Data.length / 6); //page ah koite dekahbe
+    const [currentPage,setCurrentPage]=useState(0);
+    const [endPage,setEndPage]=useState(6)
 
 
-    function Items({ currentItems }) {
-        return (
-            <>
-                {currentItems &&
-                    currentItems.map((item) => '')}
-            </>
-        );
+    function handlePage(e){
+      setCurrentPage(e.selected*6);
+      setEndPage((e.selected*6)+6)
     }
-
-    const [itemOffset, setItemOffset] = useState(0);
-
-    // Simulate fetching items from another resources.
-    // (This could be items from props; or items loaded in a local state
-    // from an API endpoint with useEffect and useState)
-    const endOffset = itemOffset + 6;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-    const currentItems = items.slice(itemOffset, endOffset);
-    const pageCount = Math.ceil(items.length / 2);
-
-    // Invoke when user click to request another page.
-    const handlePageClick = (event) => {
-        const newOffset = (event.selected * 2) % items.length;
-        console.log(
-            `User requested page number ${event.selected}, which is offset ${newOffset}`
-        );
-        setItemOffset(newOffset);
-    };
-
+    
 
 
 
     return (
-        <div className="md:py-16 bg-[#F8F8F8]">
+        <div className="md:py-16 bg-[#F8F8F8] ">
 
             <div>
                 <ApartmentBanner />
 
-                <div className="max-w-6xl py-28 mx-auto grid md:grid-cols-3 gap-16 ">
-                    <ApartmentCard />
-                    <ApartmentCard />
-                    <ApartmentCard />
-                    <ApartmentCard />
-                    <ApartmentCard />
-                    <ApartmentCard />
+
+                <div className="pt-20 pb-8">
+                    <h1 className="text-3xl text-[#7EA1FF] text-center "><span className="font-serif">Apartment Items</span> ({Data.length})</h1>
                 </div>
 
-                <Items currentItems={currentItems} />
+                {/* all apartment show here */}
+                <>
+                    {Data &&
+                        <div className="max-w-6xl pb-20 mx-auto grid md:grid-cols-3 gap-16 px-4 md:px-0">
+                            {Data.slice(currentPage,endPage).map((item, i) => <ApartmentCard key={i} data={item}/>)}
+                        </div>
+                    }
+                </>
+                {/* button paginate here */}
                 <ReactPaginate
                     breakLabel="..."
-                    previousLabel={<button className="btn btn-ghost bg-[#7EA1FF] btn-sm text-white font-bold"><GrCaretPrevious/></button>}
-                    nextLabel={<button className="btn btn-ghost bg-[#7EA1FF] btn-sm text-white font-bold"><GrCaretNext/></button>}
-                    onPageChange={handlePageClick}
+                    previousLabel={<button className="btn btn-ghost bg-[#7EA1FF] btn-sm text-white font-bold"><GrCaretPrevious /></button>}
+                    nextLabel={<button className="btn btn-ghost bg-[#7EA1FF] btn-sm text-white font-bold"><GrCaretNext /></button>}
+                    onPageChange={handlePage}
                     pageRangeDisplayed={5}
                     pageCount={pageCount}
                     renderOnZeroPageCount={null}

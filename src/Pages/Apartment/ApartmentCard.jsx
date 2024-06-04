@@ -3,13 +3,22 @@ import { CgCoffee } from "react-icons/cg";
 import { FaCar, FaSwimmer } from "react-icons/fa";
 import { MdSecurity } from "react-icons/md";
 import { TiWiFi } from "react-icons/ti";
+import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
+import InnerImageZoom from 'react-inner-image-zoom';
 
-const ApartmentCard = () => {
+
+
+
+<InnerImageZoom src="/path/to/image.jpg" zoomSrc="/path/to/zoom-image.jpg" />
+
+const ApartmentCard = ({data}) => {
+    const {name,apartmentImage,floorNo,blockName,rent,apartmentNo}=data||{}
+    console.log(data)
     return (
         <div>
-            <div className="bg-base-100 shadow-2xl">
+            <div className="bg-base-100 shadow-2xl hover:scale-110">
                 <figure>
-                    <img src="/ab1.jpg" alt="Shoes" className="h-52" />
+                    <img src={apartmentImage} alt={name} className="h-52 w-full " />
                 </figure>
 
                 <div className="flex flex-col items-start  p-3">
@@ -23,14 +32,13 @@ const ApartmentCard = () => {
                         <span><FaSwimmer /></span>
                         <span><MdSecurity /></span>
                     </div>
-                    <h1 className="text-xl font-serif pt-2 text-center">Minimal Duplex Apartment</h1>
+                    <h1 className="text-xl font-serif pt-2">{name}</h1>
 
                     <div>
-                        <p><span className="font-bold">Block name:</span> A1</p>
-                        <p><span className="font-bold">Apartment no:</span> 909</p>
-                        <p><span className="font-bold">Floor no:</span> 11</p>
-                        <p><span className="font-bold">Rent:</span> 2300$</p>
-                        <p><span className="font-bold">Apartment no:</span> A2</p>
+                        <p><span className="font-bold">Block name:</span> {blockName}</p>
+                        <p><span className="font-bold">Apartment no:</span> {apartmentNo}</p>
+                        <p><span className="font-bold">Floor no:</span> {floorNo}</p>
+                        <p><span className="font-bold">Rent:</span> {rent}$</p>
                     </div>
 
 

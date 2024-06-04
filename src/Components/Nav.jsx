@@ -1,12 +1,18 @@
 
-import { NavLink } from "react-router-dom";
-import { BiHome } from "react-icons/bi";
+import { Link, NavLink } from "react-router-dom";
+import { BiHome, BiLogOut } from "react-icons/bi";
 import { MdApartment } from "react-icons/md";
 import { TfiUnlock } from "react-icons/tfi";
 import { useState } from "react";
+import useAuth from "../Hooks/useAuth";
+import { CiMenuBurger } from "react-icons/ci";
+import toast from "react-hot-toast";
+import { HashLoader } from "react-spinners";
 
 const Nav = () => {
     const [open, setOpen] = useState(false);
+    const [isShow, setIsShow] = useState(false)
+    const { user, logout, loading } = useAuth()
 
     const navLink =
         <>
@@ -48,8 +54,44 @@ const Nav = () => {
                             {navLink}
                         </ul>
                     </div>
+
                     <div className="navbar-end">
-                        <button className="flex items-center text-white font-bold"><TfiUnlock className="text-base text-[#7EA1FF]" /> Login</button>
+
+                        <>
+                            {
+                                loading ? <HashLoader color="#E49BFF" /> :
+                                    <>
+                                        {
+                                            user
+                                                ?
+                                                <div className="dropdown dropdown-end  ">
+                                                    <div tabIndex={0} role="button" onClick={() => setIsShow(!isShow)} className="flex items-center gap-2 bg-slate-100 rounded-lg p-1.5">
+                                                        <CiMenuBurger />
+                                                        <div className="avatar">
+                                                            <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ">
+                                                                <img src={user?.photoURL} />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <ul tabIndex={0} className={`dropdown-content z-50 menu p-2 shadow bg-base-100 rounded-box w-auto mt-1 
+                                             ${isShow ? '' : 'hidden'}`}>
+                                                        <img src={user?.photoURL} className="w-14 h-14 mx-auto rounded-full" />
+                                                        <h1 className="text-center font-bold">{user?.displayName}</h1>
+                                                        <div className="flex justify-center items-center gap-0.5 p-1 mt-1 cursor-pointer hover:underline" onClick={() => {
+                                                            logout()
+                                                                .then(() => toast.success('Logout successful'))
+                                                                .catch((error) => toast.error(error.message))
+                                                        }}><BiLogOut className="text-xl" />Logout</div>
+                                                    </ul>
+                                                </div>
+                                                :
+                                                <Link className="flex items-center text-white font-bold" to={'/login'}><TfiUnlock className="text-base text-[#7EA1FF]"
+                                                /> Login</Link>
+                                        }
+                                    </>
+                            }
+                        </>
+
                     </div>
                 </div>
             </section>

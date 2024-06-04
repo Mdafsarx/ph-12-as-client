@@ -44,8 +44,8 @@ const Auth = ({ children }) => {
 
 
     useEffect(()=>{
-        onAuthStateChanged(auth,(user)=>{
-          setUser(user)
+        onAuthStateChanged(auth,(User)=>{
+          setUser(User)
           setLoading(false)
         })
     },[])

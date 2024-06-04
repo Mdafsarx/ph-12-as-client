@@ -6,9 +6,11 @@ import Login from "../Pages/Log/Login";
 import Register from "../Pages/Register/Register";
 import EmailLog from "../Pages/Log/EmailLog";
 import Error from "../Error/Error";
+import DashBoardLayout from "../Root/DashBoardLayout";
 // import Private from "../Private/Private";
 
 const route = createBrowserRouter([
+//   main layout
     {
         path: '/',
         element: <MainLayout />,
@@ -25,8 +27,6 @@ const route = createBrowserRouter([
 
         ]
     },
-
-
     // login route
     {
         path: '/login',
@@ -39,7 +39,20 @@ const route = createBrowserRouter([
     {
         path: '/register',
         element: <Register />
+    },
+
+    // dashboard layout
+    {
+
+        path:'dashboard',
+        element:<DashBoardLayout/>
+
     }
+
+
+
+
+
 ])
 
 

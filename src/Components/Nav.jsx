@@ -16,13 +16,18 @@ const Nav = () => {
 
     const navLink =
         <>
-            <NavLink className={'flex flex-col justify-center text-white items-center'} to={'/'}>
+            <NavLink className={({isActive})=>isActive?`flex flex-col justify-center items-center text-white border-b-2 border-[#7EA1FF]`:`flex flex-col justify-center text-white items-center`} to={'/'}>
                 <BiHome className="text-sm text-[#7EA1FF]" /><span className="text-xs uppercase font-bold">HOME</span>
             </NavLink>
 
-            <NavLink className={'flex flex-col justify-center text-white items-center'} to={'/apartment'}>
+            <NavLink className={({isActive})=>isActive?`flex flex-col justify-center items-center text-white border-b-2 border-[#7EA1FF]`:`flex flex-col justify-center text-white items-center`} to={'/apartment'}>
                 <MdApartment className="text-sm text-[#7EA1FF]" />
                 <span className="text-xs uppercase font-bold">Apartment</span>
+            </NavLink>
+
+            <NavLink className={'flex flex-col justify-center items-center text-white'} to={'/dashboard'}>
+                <MdApartment className="text-sm text-[#7EA1FF]" />
+                <span className="text-xs uppercase font-bold">Dashboard</span>
             </NavLink>
         </>
 

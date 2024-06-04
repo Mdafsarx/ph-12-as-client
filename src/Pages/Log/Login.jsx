@@ -4,11 +4,13 @@ import { MdEmail } from "react-icons/md";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
+// import CommonUrl from "../../Hooks/CommonUrl";
 
 const Login = () => {
     const location=useLocation();
     const navLink=useNavigate()
     const { Google } = useAuth();
+
 
 
     const handleGoogle = () => {

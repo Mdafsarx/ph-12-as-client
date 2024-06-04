@@ -28,6 +28,7 @@ const Register = () => {
                         .then(() => {
                             toast.success('Register successful');
                             navLink(location.state || '/')
+
                         }).catch(error => toast.error(error.message))
                 }
             })

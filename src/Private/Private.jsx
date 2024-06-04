@@ -7,7 +7,7 @@ const Private = ({children}) => {
     const location=useLocation();
     const {user,loading}=useAuth();
     
-    if(loading)return <div className="flex items-center justify-center min-h-[52vh]"><HashLoader color="#E49BFF" /></div>
+    if(loading)return <div className="flex items-center justify-center min-h-[51.9vh]"><HashLoader color="#E49BFF" /></div>
 
     if (user) {
         return children

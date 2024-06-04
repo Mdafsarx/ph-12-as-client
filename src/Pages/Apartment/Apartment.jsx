@@ -14,14 +14,16 @@ const Apartment = () => {
     // data load here
     const { data: Data = [] } = useQuery({
         queryKey: ['apartment'],
+        // enabled:,
         queryFn: async () => {
             const res = await axiosUrl('/apartment');
             return res.data
         }
+        
 
     })
 
-    const pageCount = Math.ceil(Data.length / 6); //page ah koite dekahbe
+    const pageCount = Math.ceil(Data.length / 6); 
     const [currentPage,setCurrentPage]=useState(0);
     const [endPage,setEndPage]=useState(6)
 

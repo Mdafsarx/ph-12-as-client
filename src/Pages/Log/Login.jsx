@@ -1,19 +1,23 @@
 import { BsGoogle, BsTwitter } from "react-icons/bs";
 import { GrLinkNext } from "react-icons/gr";
 import { MdEmail } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 
 const Login = () => {
-
+    const location=useLocation();
+    const navLink=useNavigate()
     const { Google } = useAuth();
 
 
     const handleGoogle = () => {
         Google()
             .then(result => {
-                if (result.user) toast.success('Login successful')
+                if (result.user) {
+                    toast.success('Login successful')
+                    navLink(location.state || '/')
+                }
             })
             .catch(error => toast.error(error.message))
     }

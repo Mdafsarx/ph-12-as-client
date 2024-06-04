@@ -5,12 +5,14 @@ import Apartment from "../Pages/Apartment/Apartment";
 import Login from "../Pages/Log/Login";
 import Register from "../Pages/Register/Register";
 import EmailLog from "../Pages/Log/EmailLog";
-import Private from "../Private/Private";
+import Error from "../Error/Error";
+// import Private from "../Private/Private";
 
 const route = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout />,
+        errorElement:<Error/>,
         children: [
             {
                 path: '/',
@@ -18,7 +20,7 @@ const route = createBrowserRouter([
             },
             {
                 path: '/apartment',
-                element: <Private><Apartment /></Private>
+                element: <Apartment />
             },
 
         ]

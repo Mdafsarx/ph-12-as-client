@@ -59,7 +59,7 @@ const Nav = () => {
 
                         <>
                             {
-                                loading ? <HashLoader color="#E49BFF" /> :
+                                loading ? <HashLoader color="#E49BFF" size={45} /> :
                                     <>
                                         {
                                             user
@@ -68,13 +68,13 @@ const Nav = () => {
                                                     <div tabIndex={0} role="button" onClick={() => setIsShow(!isShow)} className="flex items-center gap-2 bg-slate-100 rounded-lg p-1.5">
                                                         <CiMenuBurger />
                                                         <div className="avatar">
-                                                            <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ">
+                                                            <div className="w-8 rounded-full ring ring-[#7EA1FF] ring-offset-base-100 ">
                                                                 <img src={user?.photoURL} />
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <ul tabIndex={0} className={`dropdown-content z-50 menu p-2 shadow bg-base-100 rounded-box w-auto mt-1 
-                                             ${isShow ? '' : 'hidden'}`}>
+                                                    <ul tabIndex={0} className={`dropdown-content z-50 menu p-2 shadow bg-base-100 rounded-box w-auto mt-4 
+                                                      ${isShow ? '' : 'hidden'}`}>
                                                         <img src={user?.photoURL} className="w-14 h-14 mx-auto rounded-full" />
                                                         <h1 className="text-center font-bold">{user?.displayName}</h1>
                                                         <div className="flex justify-center items-center gap-0.5 p-1 mt-1 cursor-pointer hover:underline" onClick={() => {

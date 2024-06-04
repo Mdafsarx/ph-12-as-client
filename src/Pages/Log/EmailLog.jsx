@@ -1,11 +1,14 @@
 import { GrLinkNext } from "react-icons/gr";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 
 const EmailLog = () => {
 
-    const { loginUser } = useAuth()
+    const { loginUser } = useAuth();
+    const location=useLocation()
+    const navLink=useNavigate()
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -16,6 +19,7 @@ const EmailLog = () => {
             .then(() => {
                 toast.success('Login successful')
                 e.target.reset();
+                navLink(location.state || '/')
             })
             .catch((error) => {
                 toast.error(error.message)

@@ -1,6 +1,6 @@
 import { BiPhotoAlbum } from "react-icons/bi";
 import { GrLinkNext } from "react-icons/gr";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import axios from "axios";
@@ -8,6 +8,8 @@ import axios from "axios";
 const Register = () => {
 
     const { registerUser, updateUser } = useAuth();
+    const location=useLocation()
+    const navLink=useNavigate()
 
     async function handleRegister(e) {
         e.preventDefault();
@@ -25,6 +27,7 @@ const Register = () => {
                     updateUser(name, res.data.data.display_url)
                         .then(() => {
                             toast.success('Register successful');
+                            navLink(location.state || '/')
                         }).catch(error => toast.error(error.message))
                 }
             })

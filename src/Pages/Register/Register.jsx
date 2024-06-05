@@ -27,7 +27,7 @@ const Register = () => {
         const formData = new FormData()
         formData.append('image', image)
         const res = await axios.post(`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB}`, formData);
-        const user = { name, email, photo: res.data.data.display_url, userStatus: 'user' }
+        const user = { name, email, photo: res.data.data.display_url, userRole: 'user' }
         registerUser(email, password)
             .then(result => {
                 if (result.user) {

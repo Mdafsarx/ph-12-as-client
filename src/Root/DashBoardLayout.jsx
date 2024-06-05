@@ -31,7 +31,7 @@ const DashBoardLayout = () => {
                         <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'}><ImProfile />Admin Profile</NavLink>
                         <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'}><BsPeople />Manage Member</NavLink>
                         <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'} to={'/dashboard/MakeAnnouncement'}><TfiAnnouncement />Make Announcement</NavLink>
-                        <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'}><FiFile />Agreement Requests</NavLink>
+                        <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'} to={'/dashboard/AgreementRequest'}><FiFile />Agreement Requests</NavLink>
                         <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'}><RiCoupon2Fill />Manage Coupons</NavLink>
 
                         <div className="divider divider-info pt-5 pb-2"></div>

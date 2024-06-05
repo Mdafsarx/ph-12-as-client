@@ -21,7 +21,7 @@ const Login = () => {
             .then(result => {
                 if (result.user) {
                     // console.log(result.user.photoURL)
-                   axiosUrl.post('/user',{name:result.user.displayName,email:result.user.email,photo:result.user.photoURL,userStatus:'user'})
+                   axiosUrl.post('/user',{name:result.user.displayName,email:result.user.email,photo:result.user.photoURL,userRole:'user'})
                    .then(data=>{
                     if(data.data.insertedId || data.data.message){
                         toast.success('Login successful')

@@ -5,7 +5,7 @@ import { MdSecurity } from "react-icons/md";
 import { TiWiFi } from "react-icons/ti";
 import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
 import useAuth from "../../Hooks/useAuth";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import CommonUrl from "../../Hooks/CommonUrl";
 import toast from "react-hot-toast";
 
@@ -13,24 +13,40 @@ import toast from "react-hot-toast";
 
 
 
-const ApartmentCard = ({data}) => {
-    const axiosUrl=CommonUrl()
-    const {user}=useAuth()
-    const {name,apartmentImage,floorNo,blockName,rent,apartmentNo}=data||{};
-    const navLink=useNavigate();
-    const Data=new Date
-    const today=Data.getDate();
+const ApartmentCard = ({ data }) => {
+    const axiosUrl = CommonUrl()
+    const { user } = useAuth()
+    const { name, apartmentImage, floorNo, blockName, rent, apartmentNo } = data || {};
+    const navLink = useNavigate();
+    const Data = new Date
+    const today = Data.getDate();
+    const mount = Data.getMonth() + 1;
+    const year = Data.getFullYear();
 
-    const handleAgreement=()=>{       
-        if(!user)return navLink('/login')
-            const agreementData={userName:user?.displayName,email:user?.email,floorNo,blockName,apartmentNo,rent,status:'pending',date:today};
-            axiosUrl.post('/agreement',agreementData)
-           .then(data=>{
-            if(data.data.insertedId)toast.success('Agreement successful')
-            else if(data.data.message)toast.error('One user will be able to apply for one apartment')
-           })
-           .catch(error=>toast.error(error.message))
-       
+
+    const handleAgreement = () => {
+        if (!user) return navLink('/login')
+        const agreementData =
+        {
+            userName: user?.displayName, email: user?.email, floorNo, blockName, apartmentName: name,
+            apartmentNo, rent, status: 'pending', date: today, mount, year, image: apartmentImage,
+        };
+        axiosUrl.post('/agreement', agreementData)
+            .then(data => {
+                if (data.data.insertedId) {
+                    // admin agreement
+                    axiosUrl.post('/agreementAdmin', agreementData)
+                        .then(data => {
+                            if (data.data.insertedId) toast.success('Agreement successful')
+                            else if (data.data.message) toast.error('One user will be able to apply for one apartment')
+                        })
+                        .catch(error => toast.error(error.message))
+                }
+                else if (data.data.message) toast.error('One user will be able to apply for one apartment')
+            })
+            .catch(error => toast.error(error.message))
+
+
     }
 
 
@@ -63,13 +79,13 @@ const ApartmentCard = ({data}) => {
 
 
                 </div>
-                  
-                  <div className="max-w-60 mx-auto pt-1 pb-4">
+
+                <div className="max-w-60 mx-auto pt-1 pb-4">
                     <button className="btn btn-outline bg-[#E49BFF] border-0 border-b-4 border-[#7EA1FF] text-white shadow-md btn-block"
-                     onClick={handleAgreement}
-                     >Agreement</button>
-                  </div>
-                   
+                        onClick={handleAgreement}
+                    >Agreement</button>
+                </div>
+
             </div>
         </div>
     );

@@ -7,23 +7,23 @@ import './announcement.css'
 
 import { TfiAnnouncement } from 'react-icons/tfi';
 const MakeAnnouncement = () => {
-    const axiosUrl=CommonUrl()
+    const axiosUrl = CommonUrl()
 
-    
-    const handleAnnouncement=function(e){
+
+    const handleAnnouncement = function (e) {
         e.preventDefault()
-        const title=e.target.title.value;
-        const description=e.target.description.value ;
-        axiosUrl.post('/announcement',{title,description})
-        .then(data=>{
-            if(data.data.insertedId){
-                toast.success('Announcement sended')
-                e.target.reset()
-            }
-        })
-        .catch(error=>{
-            toast.error(error.message)
-        })
+        const title = e.target.title.value;
+        const description = e.target.description.value;
+        axiosUrl.post('/announcement', { title, description })
+            .then(data => {
+                if (data.data.insertedId) {
+                    toast.success('Announcement sended')
+                    e.target.reset()
+                }
+            })
+            .catch(error => {
+                toast.error(error.message)
+            })
     }
 
 
@@ -34,9 +34,9 @@ const MakeAnnouncement = () => {
                 {/* form */}
                 <div className="flex items-center max-w-sm mx-auto justify-center text-center ">
                     <form className="flex flex-col justify-center w-full  min-h-[75vh] space-y-3" onSubmit={handleAnnouncement}>
-                        <h1 className='md:text-3xl font-serif flex items-center gap-1'>Announcement<TfiAnnouncement/></h1>
+                        <h1 className='md:text-3xl font-serif flex items-center gap-1'>Announcement<TfiAnnouncement /></h1>
                         <label className="self-start mt-3 text-xs font-semibold">Title</label>
-                        <input  type="text" name='title' className="flex items-center h-12 px-4 mt-2 rounded border border-black" placeholder='Title' required />
+                        <input type="text" name='title' className="flex items-center h-12 px-4 mt-2 rounded border border-black" placeholder='Title' required />
                         <label className="self-start mt-3 text-xs font-semibold">Description</label>
                         <textarea name='description' className="border px-2 pt-1 rounded border-black mt-2" cols={25} rows={5} placeholder="Description" required></textarea>
                         <button type="submit" className="btn btn-block bg-[#7EA1FF] text-white">Submit</button>

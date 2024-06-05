@@ -8,6 +8,7 @@ import EmailLog from "../Pages/Log/EmailLog";
 import Error from "../Error/Error";
 import DashBoardLayout from "../Root/DashBoardLayout";
 import MakeAnnouncement from "../Pages/Dashboard/MakeAnnouncement";
+import AgreementRequest from "../Pages/Dashboard/AgreementRequest";
 // import Private from "../Private/Private";
 
 const route = createBrowserRouter([
@@ -51,6 +52,10 @@ const route = createBrowserRouter([
             {
                 path:'MakeAnnouncement',
                 element:<MakeAnnouncement/>
+            },
+            {
+                path:'AgreementRequest',
+                element:<AgreementRequest/>
             }
         ]
 

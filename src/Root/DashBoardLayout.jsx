@@ -28,12 +28,15 @@ const DashBoardLayout = () => {
 
                     {/* routes */}
                     <div className="p-4 space-y-3 mt-3 ">
+
+                         {/*  dynamic routes based on userRole */}
                         <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'}><ImProfile />Admin Profile</NavLink>
                         <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'}><BsPeople />Manage Member</NavLink>
                         <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'} to={'/dashboard/MakeAnnouncement'}><TfiAnnouncement />Make Announcement</NavLink>
                         <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'} to={'/dashboard/AgreementRequest'}><FiFile />Agreement Requests</NavLink>
                         <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'}><RiCoupon2Fill />Manage Coupons</NavLink>
-
+                        
+                        {/* divider */}
                         <div className="divider divider-info pt-5 pb-2"></div>
 
                         {/* static routes */}

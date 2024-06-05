@@ -1,4 +1,4 @@
-const AdminRoutes = () => {
+const UserRoutes = () => {
     return (
         <>
             
@@ -6,4 +6,4 @@ const AdminRoutes = () => {
     );
 };
 
-export default AdminRoutes;
+export default UserRoutes;

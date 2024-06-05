@@ -7,6 +7,7 @@ import Register from "../Pages/Register/Register";
 import EmailLog from "../Pages/Log/EmailLog";
 import Error from "../Error/Error";
 import DashBoardLayout from "../Root/DashBoardLayout";
+import MakeAnnouncement from "../Pages/Dashboard/MakeAnnouncement";
 // import Private from "../Private/Private";
 
 const route = createBrowserRouter([
@@ -45,7 +46,13 @@ const route = createBrowserRouter([
     {
 
         path:'dashboard',
-        element:<DashBoardLayout/>
+        element:<DashBoardLayout/>,
+        children:[
+            {
+                path:'MakeAnnouncement',
+                element:<MakeAnnouncement/>
+            }
+        ]
 
     }
 

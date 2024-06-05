@@ -4,15 +4,21 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import axios from "axios";
+import CommonUrl from "../../Hooks/CommonUrl";
+import { useState } from "react";
+import { TbFidgetSpinner } from "react-icons/tb";
 
 const Register = () => {
 
     const { registerUser, updateUser } = useAuth();
-    const location=useLocation()
-    const navLink=useNavigate()
+    const [loading,setLoading]=useState(false)
+    const axiosUrl = CommonUrl();
+    const location = useLocation()
+    const navLink = useNavigate()
 
     async function handleRegister(e) {
         e.preventDefault();
+        setLoading(true)
         const name = e.target.name.value;
         const image = e.target.file.files[0];
         const email = e.target.email.value;
@@ -20,20 +26,35 @@ const Register = () => {
         console.log(image)
         const formData = new FormData()
         formData.append('image', image)
-        const res = await axios.post(`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB}`, formData)
+        const res = await axios.post(`https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB}`, formData);
+        const user = { name, email, photo: res.data.data.display_url, userStatus: 'user' }
         registerUser(email, password)
             .then(result => {
                 if (result.user) {
                     updateUser(name, res.data.data.display_url)
                         .then(() => {
-                            toast.success('Register successful');
-                            navLink(location.state || '/')
-
-                        }).catch(error => toast.error(error.message))
+                            // user data post method
+                            axiosUrl.post('/user', user)
+                                .then(data => {
+                                    if (data.data.insertedId) {
+                                        toast.success('Register successful');
+                                        setLoading(false)
+                                        navLink(location.state || '/')
+                                    }
+                                })
+                                .catch(error => {
+                                    toast.error(error.message);
+                                    setLoading(false)
+                                })
+                        }).catch(error => {
+                            toast.error(error.message);
+                            setLoading(false)
+                        })
                 }
             })
             .catch(error => {
                 toast.error(error.message)
+                setLoading(false)
             })
 
     }
@@ -71,7 +92,7 @@ const Register = () => {
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z" clipRule="evenodd" /></svg>
                                 <input type="password" name="password" className="grow" placeholder="Password" required />
                             </label>
-                            <button className="btn bg-[#7EA1FF] text-white btn-block font-bold">Create Account</button>
+                            <button className="btn bg-[#7EA1FF] text-white btn-block font-bold">{loading ? <TbFidgetSpinner className="animate-spin"/>:'Create Account'}</button>
                         </form>
                     </div>
 

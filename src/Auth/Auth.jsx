@@ -12,29 +12,35 @@ const Auth = ({ children }) => {
 
     const GoogleProvider = new GoogleAuthProvider();
     const Google = () => {
+        setLoading(true)
         return signInWithPopup(auth, GoogleProvider)
     }
 
     const TwitterProvider = new TwitterAuthProvider();
     const Twitter = () => {
+        setLoading(true)
         return signInWithPopup(auth, TwitterProvider)
     }
 
     const registerUser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const loginUser = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     } 
 
     const updateUser=function(name,url){
+        setLoading(true)
       return  updateProfile(auth.currentUser, {
             displayName: name, photoURL: url
           })
     }
 
     const logout=()=>{
+        setLoading(true)
       return signOut(auth)
     }
 

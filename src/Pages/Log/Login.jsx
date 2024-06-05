@@ -4,12 +4,15 @@ import { MdEmail } from "react-icons/md";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
+import CommonUrl from "../../Hooks/CommonUrl";
 // import CommonUrl from "../../Hooks/CommonUrl";
 
 const Login = () => {
     const location=useLocation();
     const navLink=useNavigate()
     const { Google } = useAuth();
+    const axiosUrl=CommonUrl();
+
 
 
 
@@ -17,8 +20,14 @@ const Login = () => {
         Google()
             .then(result => {
                 if (result.user) {
-                    toast.success('Login successful')
-                    navLink(location.state || '/')
+                    // console.log(result.user.photoURL)
+                   axiosUrl.post('/user',{name:result.user.displayName,email:result.user.email,photo:result.user.photoURL,userStatus:'user'})
+                   .then(data=>{
+                    if(data.data.insertedId || data.data.message){
+                        toast.success('Login successful')
+                        navLink(location.state || '/')
+                    }
+                   }).catch(error=>toast.error(error))
                 }
             })
             .catch(error => toast.error(error.message))

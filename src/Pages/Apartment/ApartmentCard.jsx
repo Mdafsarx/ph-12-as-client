@@ -17,11 +17,13 @@ const ApartmentCard = ({data}) => {
     const axiosUrl=CommonUrl()
     const {user}=useAuth()
     const {name,apartmentImage,floorNo,blockName,rent,apartmentNo}=data||{};
-    const navLink=useNavigate()
+    const navLink=useNavigate();
+    const Data=new Date
+    const today=Data.getDate();
 
     const handleAgreement=()=>{       
         if(!user)return navLink('/login')
-            const agreementData={userName:user?.displayName,email:user?.email,floorNo,blockName,apartmentNo,rent,status:'pending'}
+            const agreementData={userName:user?.displayName,email:user?.email,floorNo,blockName,apartmentNo,rent,status:'pending',date:today};
             axiosUrl.post('/agreement',agreementData)
            .then(data=>{
             if(data.data.insertedId)toast.success('Agreement successful')

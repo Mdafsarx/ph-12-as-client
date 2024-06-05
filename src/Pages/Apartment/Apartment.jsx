@@ -12,7 +12,7 @@ import CommonUrl from "../../Hooks/CommonUrl";
 const Apartment = () => {
     const axiosUrl = CommonUrl();
     // data load here
-    const { data: Data = [] } = useQuery({
+    const { data: Data = [] ,refetch} = useQuery({
         queryKey: ['apartment'],
         // enabled:,
         queryFn: async () => {
@@ -31,6 +31,7 @@ const Apartment = () => {
     function handlePage(e){
       setCurrentPage(e.selected*6);
       setEndPage((e.selected*6)+6)
+      refetch()
     }
     
 

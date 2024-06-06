@@ -9,11 +9,10 @@ import Error from "../Error/Error";
 import DashBoardLayout from "../Root/DashBoardLayout";
 import MakeAnnouncement from "../Pages/Dashboard/MakeAnnouncement";
 import AgreementRequest from "../Pages/Dashboard/AgreementRequest";
-import ProfileUser from "../Pages/Dashboard/user/ProfileUser";
 import AnnouncementUser from "../Pages/Dashboard/user/AnnouncementUser";
-import ProfileMember from "../Pages/Dashboard/member/ProfileMember";
 import MakePayment from "../Pages/Dashboard/member/MakePayment";
 import PaymentHistory from "../Pages/Dashboard/member/PaymentHistory";
+import Profile from "../Pages/Dashboard/user/ProfileUser";
 // import Private from "../Private/Private";
 
 const route = createBrowserRouter([
@@ -56,29 +55,29 @@ const route = createBrowserRouter([
         children: [
             // admin
             {
-                path: 'MakeAnnouncement',
+                path: 'Make-Announcement',
                 element: <MakeAnnouncement />
             },
             {
-                path: 'AgreementRequest',
+                path: 'Agreement-Request',
                 element: <AgreementRequest />
             },
             // user
             {
-                path: 'userProfile',
-                element: <ProfileUser />
+                path: 'user-Profile',
+                element: <Profile />
             },
             // member
             {
-                path: 'memberProfile',
-                element: <ProfileMember />
+                path: 'member-Profile',
+                element: <Profile />
             },
             {
-                path: 'makePayment',
+                path: 'make-Payment',
                 element: <MakePayment />
             },
             {
-                path: 'paymentHistory',
+                path: 'payment-History',
                 element: <PaymentHistory />
             },
 

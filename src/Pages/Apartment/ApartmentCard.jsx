@@ -37,7 +37,11 @@ const ApartmentCard = ({ data }) => {
                     // admin agreement
                     axiosUrl.post('/agreementAdmin', agreementData)
                         .then(data => {
-                            if (data.data.insertedId) toast.success('Agreement successful')
+                            if (data.data.insertedId) {
+
+                                
+                                toast.success('Agreement successful')
+                            }
                             else if (data.data.message) toast.error('One user will be able to apply for one apartment')
                         })
                         .catch(error => toast.error(error.message))

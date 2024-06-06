@@ -1,6 +1,6 @@
 import { BiHome, BiLogOut } from "react-icons/bi";
 import { MdApartment } from "react-icons/md";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import toast from "react-hot-toast";
 import AdminRoutes from "../Routes/AdminRoutes";
@@ -11,18 +11,13 @@ import useRole from "../Hooks/useRole";
 
 const DashBoardLayout = () => {
     const { logout } = useAuth();
-    // const axiosUrl = CommonUrl();
+    const location = useLocation()
+    const [role] = useRole();
+    const Data = new Date
+    const today = Data.getDate();
+    const mount = Data.getMonth() + 1;
+    const year = Data.getFullYear();
 
-    // const { data = [] } = useQuery({
-    //     queryKey: ['users'],
-    //     queryFn: async () => {
-    //         const res = await axiosUrl('/users')
-    //         return res.data
-    //     }
-    // })
-
-    // const currentUser = data.find(Data => Data?.email === user?.email);
-    const [role]=useRole();
 
 
 
@@ -47,7 +42,7 @@ const DashBoardLayout = () => {
 
                         {/*  dynamic routes based on userRole */}
                         {
-                            role?.userRole === 'user' ? <UserRoutes /> : role?.userRole === 'admin' ? <AdminRoutes /> : <MemberRoutes />
+                            role === 'admin' ? <AdminRoutes /> : role === 'member' ? <MemberRoutes /> : <UserRoutes/> 
                         }
 
                         {/* divider */}
@@ -74,8 +69,9 @@ const DashBoardLayout = () => {
 
                 <div>
                     {/* active route name and user name */}
-                    <div className="bg-black w-[calc(100vw-192px)] h-14">
-
+                    <div className="bg-black w-[calc(100vw-192px)] h-14 flex items-center justify-between px-10">
+                        <h1 className="text-white text-xl">{location?.pathname.split('/')[2].toUpperCase()}</h1>
+                        <h1 className="text-white text-xl">Date:{today}/{mount}/{year}</h1>
                     </div>
 
                     {/* outlet */}

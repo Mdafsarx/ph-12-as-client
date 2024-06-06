@@ -10,13 +10,17 @@ import { TfiAnnouncement } from "react-icons/tfi";
 const MemberRoutes = () => {
     return (
         <>
-            <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'}
-                to={'/dashboard/memberProfile'}><TiHomeOutline />My Profile</NavLink>
-            <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'}
-                to={'/dashboard/makePayment'}><MdOutlinePayment />Make payment</NavLink>
-            <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'}
-                to={'/dashboard/paymentHistory'}><FaHistory />Payment History</NavLink>
-            <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'}
+            <NavLink className={({ isActive }) => isActive ?
+                `flex items-center text-sm gap-1 text-[#7EA1FF] ` : `flex items-center text-sm gap-1 hover:text-[#7EA1FF]`}
+                to={'/dashboard/member-Profile'}><TiHomeOutline />My Profile</NavLink>
+            <NavLink className={({ isActive }) => isActive ?
+                `flex items-center text-sm gap-1 text-[#7EA1FF] ` : `flex items-center text-sm gap-1 hover:text-[#7EA1FF]`}
+                to={'/dashboard/make-Payment'}><MdOutlinePayment />Make payment</NavLink>
+            <NavLink className={({ isActive }) => isActive ?
+                `flex items-center text-sm gap-1 text-[#7EA1FF] ` : `flex items-center text-sm gap-1 hover:text-[#7EA1FF]`}
+                to={'/dashboard/payment-History'}><FaHistory />Payment History</NavLink>
+            <NavLink className={({ isActive }) => isActive ?
+                `flex items-center text-sm gap-1 text-[#7EA1FF] ` : `flex items-center text-sm gap-1 hover:text-[#7EA1FF]`}
                 to={'/dashboard/Announcement'}><TfiAnnouncement />Announcements</NavLink>
         </>
     );

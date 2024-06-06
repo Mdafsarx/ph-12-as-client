@@ -1,28 +1,42 @@
 import useAuth from "../../../Hooks/useAuth";
 import { SiFirebase } from "react-icons/si";
 import useRole from "../../../Hooks/useRole";
-import { BiUser } from "react-icons/bi";
+import { BiAlarm, BiBed, BiUser } from "react-icons/bi";
+import { TiWiFi } from "react-icons/ti";
+import { FaCar, FaSwimmer } from "react-icons/fa";
+import { CgCoffee } from "react-icons/cg";
+import { MdSecurity } from "react-icons/md";
+import { useQuery } from "@tanstack/react-query";
+import CommonUrl from "../../../Hooks/CommonUrl";
 
 
 
-const ProfileUser = () => {
-
+const Profile = () => {
+    const axiosUrl=CommonUrl();
     const { user = {} } = useAuth();
+    console.log(user)
     const [role] = useRole();
-    console.log(role)
+    const {data=[]}=useQuery({
+        queryKey:['agreement',user?.email],
+        queryFn:async()=>{
+          const res=await axiosUrl(`/agreement/${user?.email}`)
+          return res.data ;
+        }
+    })
+
 
 
 
 
     return (
-        <div className="p- max-w-6xl mx-auto">
+        <div className="p- max-w-3xl mx-auto">
 
 
 
-            <div className="flex items-center min-h-[60vh] gap-8 p-14">
+            <div className="p-14 space-y-10">
 
                 {/* profile */}
-                <div className="w-1/2">
+                <div>
                     <h1 className="text-2xl font-bold pb-4 text-start pl-2 uppercase "><span className="text-[#E49BFF]">PROFILE</span></h1>
                     <div className="p-8 flex flex-col items-center md:flex-row gap-5 shadow-lg rounded-lg border">
                         <div>
@@ -53,8 +67,34 @@ const ProfileUser = () => {
                 </div>
 
 
-                <div className="w-1/2">
-
+                {/* agreement */}
+                <div>
+                    <h1 className="text-2xl font-bold pb-4 text-start pl-2 uppercase "><span className="text-[#7EA1FF]">Agreement accept info</span></h1>
+                    <div className="flex bg-base-100 shadow-xl border rounded-lg">
+                        <div className="flex-1 p-4">
+                            <div className="h-10 flex items-center justify-center gap-2 mx-auto px-4 ">
+                                <span><BiBed /></span>
+                                <span><TiWiFi /></span>
+                                <span><FaCar /></span>
+                                <span><CgCoffee /></span>
+                                <span><BiAlarm /></span>
+                                <span><FaSwimmer /></span>
+                                <span><MdSecurity /></span>
+                            </div>
+                            <div>
+                                <div className="flex items-center justify-between">
+                                    <div className="p-4">
+                                        <p><span className="font-bold">Floor no:</span> {role==='user'?'none':data?.floorNo}</p>
+                                        <p><span className="font-bold">Block name:</span> {role==='user'?'none':data?.blockName}</p>
+                                        <p><span className="font-bold">Room no:</span> {role==='user'?'none':data?.apartmentNo}</p>
+                                        <p><span className="font-bold">Rent:</span> {role==='user'?'none':data?.rent}$</p>
+                                        <p><span className="font-bold">Request date:</span> {role==='user'?'none':data?.date}/{role==='user'?'none':data?.mount}/{role==='user'?'none':data?.year}</p>
+                                        <p><span className="font-bold">Accept date:</span> {role==='user'?'none':data?.date1}/{role==='user'?'none':data?.mount1}/{role==='user'?'none':data?.year1}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -63,4 +103,4 @@ const ProfileUser = () => {
     );
 };
 
-export default ProfileUser;
+export default Profile;

@@ -17,9 +17,14 @@ const AgreementRequest = () => {
             return res.data
         }
     })
+    const Data = new Date
+    const today1 = Data.getDate();
+    const mount1 = Data.getMonth() + 1;
+    const year1 = Data.getFullYear();
+
 
     const handleAccept=(email,id)=>{
-       axiosUrl.put(`/agreement?email=${email}`,{status:'checked'})
+       axiosUrl.put(`/agreement?email=${email}`,{status:'checked',date1: today1, mount1, year1})
        .then(data=>{
           if(data.data.modifiedCount){
             axiosUrl.put(`/user?email=${email}`,{Role:'member'})
@@ -114,7 +119,8 @@ const AgreementRequest = () => {
 
                                 </div>
 
-                            </div>)
+                            </div>
+                            )
                     }
 
 

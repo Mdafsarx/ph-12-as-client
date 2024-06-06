@@ -1,16 +1,31 @@
 import { BiHome, BiLogOut } from "react-icons/bi";
-import { BsPeople } from "react-icons/bs";
-import { FiFile } from "react-icons/fi";
-import { ImProfile } from "react-icons/im";
 import { MdApartment } from "react-icons/md";
-import { RiCoupon2Fill } from "react-icons/ri";
-import { TfiAnnouncement } from "react-icons/tfi";
 import { NavLink, Outlet } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import toast from "react-hot-toast";
+import AdminRoutes from "../Routes/AdminRoutes";
+import { useQuery } from "@tanstack/react-query";
+import CommonUrl from "../Hooks/CommonUrl";
+import UserRoutes from "../Routes/UserRoutes";
+import MemberRoutes from "../Routes/MemberRoutes";
 
 const DashBoardLayout = () => {
-    const { logout } = useAuth()
+    const { logout, user } = useAuth();
+    const axiosUrl = CommonUrl();
+
+    const { data = [] } = useQuery({
+        queryKey: ['users'],
+        queryFn: async () => {
+            const res = await axiosUrl('/users')
+            return res.data
+        }
+    })
+
+    const currentUser = data.find(Data => Data?.email === user?.email);
+
+
+
+
     return (
         <div>
 
@@ -29,20 +44,18 @@ const DashBoardLayout = () => {
                     {/* routes */}
                     <div className="p-4 space-y-3 mt-3 ">
 
-                         {/*  dynamic routes based on userRole */}
-                        <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'}><ImProfile />Admin Profile</NavLink>
-                        <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'}><BsPeople />Manage Member</NavLink>
-                        <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'} to={'/dashboard/MakeAnnouncement'}><TfiAnnouncement />Make Announcement</NavLink>
-                        <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'} to={'/dashboard/AgreementRequest'}><FiFile />Agreement Requests</NavLink>
-                        <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'}><RiCoupon2Fill />Manage Coupons</NavLink>
-                        
+                        {/*  dynamic routes based on userRole */}
+                        {
+                            currentUser?.userRole === 'user' ? <UserRoutes /> : currentUser?.userRole === 'admin' ? <AdminRoutes /> : <MemberRoutes />
+                        }
+
                         {/* divider */}
                         <div className="divider divider-info pt-5 pb-2"></div>
 
                         {/* static routes */}
                         <div className="space-y-3">
-                            <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'}><BiHome />Admin Profile</NavLink>
-                            <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'}><MdApartment />Apartment</NavLink>
+                            <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'} to={'/'}><BiHome />Home</NavLink>
+                            <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'} to={'/apartment'}><MdApartment />Apartment</NavLink>
                         </div>
 
 

@@ -9,14 +9,19 @@ import Error from "../Error/Error";
 import DashBoardLayout from "../Root/DashBoardLayout";
 import MakeAnnouncement from "../Pages/Dashboard/MakeAnnouncement";
 import AgreementRequest from "../Pages/Dashboard/AgreementRequest";
+import ProfileUser from "../Pages/Dashboard/user/ProfileUser";
+import AnnouncementUser from "../Pages/Dashboard/user/AnnouncementUser";
+import ProfileMember from "../Pages/Dashboard/member/ProfileMember";
+import MakePayment from "../Pages/Dashboard/member/MakePayment";
+import PaymentHistory from "../Pages/Dashboard/member/PaymentHistory";
 // import Private from "../Private/Private";
 
 const route = createBrowserRouter([
-//   main layout
+    //   main layout
     {
         path: '/',
         element: <MainLayout />,
-        errorElement:<Error/>,
+        errorElement: <Error />,
         children: [
             {
                 path: '/',
@@ -46,16 +51,42 @@ const route = createBrowserRouter([
     // dashboard layout
     {
 
-        path:'dashboard',
-        element:<DashBoardLayout/>,
-        children:[
+        path: 'dashboard',
+        element: <DashBoardLayout />,
+        children: [
+            // admin
             {
-                path:'MakeAnnouncement',
-                element:<MakeAnnouncement/>
+                path: 'MakeAnnouncement',
+                element: <MakeAnnouncement />
             },
             {
-                path:'AgreementRequest',
-                element:<AgreementRequest/>
+                path: 'AgreementRequest',
+                element: <AgreementRequest />
+            },
+            // user
+            {
+                path: 'userProfile',
+                element: <ProfileUser />
+            },
+            // member
+            {
+                path: 'memberProfile',
+                element: <ProfileMember />
+            },
+            {
+                path: 'makePayment',
+                element: <MakePayment />
+            },
+            {
+                path: 'paymentHistory',
+                element: <PaymentHistory />
+            },
+
+
+            // user and member route
+            {
+                path: 'Announcement',
+                element: <AnnouncementUser />
             }
         ]
 

@@ -4,24 +4,25 @@ import { NavLink, Outlet } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import toast from "react-hot-toast";
 import AdminRoutes from "../Routes/AdminRoutes";
-import { useQuery } from "@tanstack/react-query";
-import CommonUrl from "../Hooks/CommonUrl";
+
 import UserRoutes from "../Routes/UserRoutes";
 import MemberRoutes from "../Routes/MemberRoutes";
+import useRole from "../Hooks/useRole";
 
 const DashBoardLayout = () => {
-    const { logout, user } = useAuth();
-    const axiosUrl = CommonUrl();
+    const { logout } = useAuth();
+    // const axiosUrl = CommonUrl();
 
-    const { data = [] } = useQuery({
-        queryKey: ['users'],
-        queryFn: async () => {
-            const res = await axiosUrl('/users')
-            return res.data
-        }
-    })
+    // const { data = [] } = useQuery({
+    //     queryKey: ['users'],
+    //     queryFn: async () => {
+    //         const res = await axiosUrl('/users')
+    //         return res.data
+    //     }
+    // })
 
-    const currentUser = data.find(Data => Data?.email === user?.email);
+    // const currentUser = data.find(Data => Data?.email === user?.email);
+    const [role]=useRole();
 
 
 
@@ -46,7 +47,7 @@ const DashBoardLayout = () => {
 
                         {/*  dynamic routes based on userRole */}
                         {
-                            currentUser?.userRole === 'user' ? <UserRoutes /> : currentUser?.userRole === 'admin' ? <AdminRoutes /> : <MemberRoutes />
+                            role?.userRole === 'user' ? <UserRoutes /> : role?.userRole === 'admin' ? <AdminRoutes /> : <MemberRoutes />
                         }
 
                         {/* divider */}

@@ -17,6 +17,8 @@ import Payment from "../Pages/Dashboard/member/Payment";
 import Private from "../Private/Private";
 import AdminPrivate from "../Private/AdminPrivate";
 import UserPrivate from "../Private/UserPrivate";
+import MemberPrivate from "../Private/MemberPrivate";
+import MemberAndUser from "../Private/MemberAndUser";
 
 const route = createBrowserRouter([
     //   main layout
@@ -79,25 +81,25 @@ const route = createBrowserRouter([
             // member
             {
                 path: 'member-Profile',
-                element: <Profile />
+                element: <Private><MemberPrivate><Profile /></MemberPrivate></Private>
             },
             {
                 path: 'make-Payment',
-                element: <MakePayment />
+                element:  <Private><MemberPrivate><MakePayment /></MemberPrivate></Private>
             },
             {
                 path: 'payment-History',
-                element: <PaymentHistory />
+                element:  <Private><MemberPrivate> <PaymentHistory /></MemberPrivate></Private>
             },
             {
                 path: 'Payment/:month',
-                element: <Payment />
+                element:  <Private><MemberPrivate><Payment /></MemberPrivate></Private>
             },
-            
+
             // user and member route
             {
                 path: 'Announcement',
-                element: <AnnouncementUser />
+                element: <Private><MemberAndUser><AnnouncementUser /></MemberAndUser></Private>
             }
         ]
 

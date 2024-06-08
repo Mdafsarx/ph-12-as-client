@@ -14,7 +14,9 @@ import MakePayment from "../Pages/Dashboard/member/MakePayment";
 import PaymentHistory from "../Pages/Dashboard/member/PaymentHistory";
 import Profile from "../Pages/Dashboard/user/ProfileUser";
 import Payment from "../Pages/Dashboard/member/Payment";
-// import Private from "../Private/Private";
+import Private from "../Private/Private";
+import AdminPrivate from "../Private/AdminPrivate";
+import UserPrivate from "../Private/UserPrivate";
 
 const route = createBrowserRouter([
     //   main layout
@@ -52,22 +54,28 @@ const route = createBrowserRouter([
     {
 
         path: 'dashboard',
-        element: <DashBoardLayout />,
+        element: <Private><DashBoardLayout /></Private>,
         children: [
             // admin
             {
                 path: 'Make-Announcement',
-                element: <MakeAnnouncement />
+                element: <Private><AdminPrivate><MakeAnnouncement /></AdminPrivate></Private>,
             },
             {
                 path: 'Agreement-Request',
-                element: <AgreementRequest />
+                element: <Private><AdminPrivate><AgreementRequest /></AdminPrivate></Private>
             },
+
+
             // user
             {
                 path: 'user-Profile',
-                element: <Profile />
+                element: <Private><UserPrivate><Profile /></UserPrivate></Private>,
             },
+            
+
+
+
             // member
             {
                 path: 'member-Profile',
@@ -82,9 +90,10 @@ const route = createBrowserRouter([
                 element: <PaymentHistory />
             },
             {
-                path:'Payment/:month',
-                element:<Payment/>
+                path: 'Payment/:month',
+                element: <Payment />
             },
+            
             // user and member route
             {
                 path: 'Announcement',

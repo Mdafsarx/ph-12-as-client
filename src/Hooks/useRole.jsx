@@ -6,7 +6,7 @@ const useRole = () => {
     const axiosUrl=CommonUrl();
     const {user}=useAuth();
 
-    const {data=[]}=useQuery({
+    const {data=[],isPending}=useQuery({
         queryKey:['users'],
         queryFn:async()=>{
             const data=await axiosUrl('/users');
@@ -15,7 +15,7 @@ const useRole = () => {
     })
     const currentUser=data?.find(Data=>Data?.email===user?.email)
     const role=currentUser?.userRole
-    return [role]
+    return [role,isPending]
 };
 
 export default useRole;

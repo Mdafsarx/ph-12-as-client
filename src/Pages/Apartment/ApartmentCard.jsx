@@ -8,6 +8,7 @@ import useAuth from "../../Hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import CommonUrl from "../../Hooks/CommonUrl";
 import toast from "react-hot-toast";
+import useRole from "../../Hooks/useRole";
 
 
 
@@ -22,10 +23,13 @@ const ApartmentCard = ({ data }) => {
     const today = Data.getDate();
     const mount = Data.getMonth() + 1;
     const year = Data.getFullYear();
+    const [role]=useRole()
 
 
     const handleAgreement = () => {
         if (!user) return navLink('/login')
+            if(role==='admin')return toast.error("Admin can't add agreement")
+
         const agreementData =
         {
             userName: user?.displayName, email: user?.email, floorNo, blockName, apartmentName: name,

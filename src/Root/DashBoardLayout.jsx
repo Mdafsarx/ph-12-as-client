@@ -69,9 +69,9 @@ const DashBoardLayout = () => {
 
                 <div>
                     {/* active route name and user name */}
-                    <div className="bg-black w-[calc(100vw-192px)] h-14 flex items-center justify-between px-10">
-                        <h1 className="text-white text-xl">{location?.pathname.split('/')[2].toUpperCase()}</h1>
-                        <h1 className="text-white text-xl">Date:{today}/{mount}/{year}</h1>
+                    <div className="bg-black w-[calc(100vw-192px)] h-14 flex items-center justify-between px-2">
+                        <h1 className="text-white text-xl uppercase">{location?.pathname.split('/')[2]}</h1>
+                        <h1 className="text-white text-xl uppercase">Date:{today}/{mount}/{year}</h1>
                     </div>
 
                     {/* outlet */}

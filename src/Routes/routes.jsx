@@ -13,6 +13,7 @@ import AnnouncementUser from "../Pages/Dashboard/user/AnnouncementUser";
 import MakePayment from "../Pages/Dashboard/member/MakePayment";
 import PaymentHistory from "../Pages/Dashboard/member/PaymentHistory";
 import Profile from "../Pages/Dashboard/user/ProfileUser";
+import Payment from "../Pages/Dashboard/member/Payment";
 // import Private from "../Private/Private";
 
 const route = createBrowserRouter([
@@ -80,8 +81,10 @@ const route = createBrowserRouter([
                 path: 'payment-History',
                 element: <PaymentHistory />
             },
-
-
+            {
+                path:'Payment/:month',
+                element:<Payment/>
+            },
             // user and member route
             {
                 path: 'Announcement',

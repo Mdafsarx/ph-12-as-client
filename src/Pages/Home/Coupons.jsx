@@ -64,8 +64,9 @@ const Coupons = () => {
                         <p className="text-2xl font-bold">Up to 25% off</p>
                     </div>
 
-                    <div className="h-full w-full   flex justify-center items-center">
+                    <div className="h-full w-full   flex flex-col justify-center items-center">
                         <img src={img3} alt="" className="w-[45%]" />
+                        <p className="-mt-2"><span className="text-lg font-bold">Code: </span>ABCD</p>
                     </div>
 
                 </div>
@@ -82,6 +83,7 @@ const Coupons = () => {
                         <p className="text-2xl font-bold">80% off</p>
                     </div>
                 </div>
+
             </section>
 
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 import CommonUrl from "../../../Hooks/CommonUrl";
@@ -8,7 +9,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 
-const Form = ({date:month}) => {
+const Form = ({ date: month }) => {
     const date = new Date()
     const paymentMonth = date.getMonth() + 1;
     const paymentDate = date.getDate();
@@ -24,6 +25,20 @@ const Form = ({date:month}) => {
             return res.data;
         }
     })
+
+    // coupons 
+    const { data: Data = [], refetch: reload } = useQuery({
+        queryKey: ['coupon', user?.email],
+        queryFn: async () => {
+            const res = await axiosUrl(`coupon`)
+            return res.data;
+        }
+    })
+
+
+
+
+
     const [totalPrice, setTotalPrice] = useState(data.rent)
     const [clientSecret, setClientSecret] = useState('')
     const stripe = useStripe();
@@ -74,9 +89,9 @@ const Form = ({date:month}) => {
                     email: user?.email,
                     month,
                     paymentMonth,
-                    paymentYear,paymentDate,
-                    transId:transactionId,
-                    price:totalPrice,
+                    paymentYear, paymentDate,
+                    transId: transactionId,
+                    price: totalPrice,
                 }
                 axiosUrl.post('/payment', payment)
                     .then(data => {
@@ -117,10 +132,14 @@ const Form = ({date:month}) => {
         e.preventDefault();
         // todo:start here 
         const coupon = e.target.coupon.value;
-        if (coupon === '11111') {
-            setTotalPrice(data?.rent - 500)
-        }
-
+        Data.forEach(coupons => {
+            if (coupon === coupons.coupon_code) {
+                const price = data?.rent - (data?.rent * parseInt(coupons.discount_percentage) / 100);
+                setTotalPrice(price)
+                e.target.reset()
+                toast.success('Coupon apply successful')
+            }
+        });
     }
 
 
@@ -130,7 +149,7 @@ const Form = ({date:month}) => {
             <form onSubmit={handleSubmit2} className="flex items-center justify-between pb-5 pr-2">
                 <div className="flex items-center">
                     <RiCoupon2Line className="text-[22px]" />
-                    <input type="text" name="coupon" placeholder="Coupon code" className=" ml-1.5 pl-0.5 outline-none" />
+                    <input type="text" name="coupon" placeholder="Coupon code" className=" ml-1.5 pl-0.5 outline-none" required />
                 </div>
                 <button className="btn btn-sm bg-[#E49BFF] text-white ">Apply</button>
             </form>

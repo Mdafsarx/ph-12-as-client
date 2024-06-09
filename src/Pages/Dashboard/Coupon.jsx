@@ -23,7 +23,7 @@ const Coupon = () => {
         axiosUrl.post('/coupon',{coupon_code:coupon,discount_percentage:discount,coupon_description:description})
         .then(data=>{
             if(data.data.insertedId){
-                toast.success('Coupon added successful')
+                toast.success('Coupon added successful');
                 e.target.reset();
                 refetch()
             }

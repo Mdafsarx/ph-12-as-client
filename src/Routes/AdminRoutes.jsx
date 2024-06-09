@@ -9,7 +9,7 @@ const AdminRoutes = () => {
     return (
         <>
             <NavLink className={({isActive})=>isActive?
-            `flex items-center text-sm gap-1 text-[#7EA1FF] `:`flex items-center text-sm gap-1 hover:text-[#7EA1FF]`} to={'/'}><ImProfile />Admin Profile</NavLink>
+            `flex items-center text-sm gap-1 text-[#7EA1FF] `:`flex items-center text-sm gap-1 hover:text-[#7EA1FF]`} to={'/dashboard/admin-Profile'}><ImProfile />Admin Profile</NavLink>
             <NavLink className={({isActive})=>isActive?
             `flex items-center text-sm gap-1 text-[#7EA1FF] `:`flex items-center text-sm gap-1 hover:text-[#7EA1FF]`} to={'/dashboard/manage-Member'}><BsPeople />Manage Member</NavLink>
             <NavLink className={({isActive})=>isActive?

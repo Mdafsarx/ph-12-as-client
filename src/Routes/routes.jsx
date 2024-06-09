@@ -21,6 +21,7 @@ import MemberPrivate from "../Private/MemberPrivate";
 import MemberAndUser from "../Private/MemberAndUser";
 import ManageMember from "../Pages/Dashboard/ManageMember";
 import Coupon from "../Pages/Dashboard/Coupon";
+import AdminProfile from "../Pages/Dashboard/AdminProfile";
 
 const route = createBrowserRouter([
     //   main layout
@@ -61,6 +62,10 @@ const route = createBrowserRouter([
         element: <Private><DashBoardLayout /></Private>,
         children: [
             // admin
+            {
+                path:'admin-Profile',
+                element: <Private><AdminPrivate><AdminProfile /></AdminPrivate></Private>
+            },
             {
                 path: 'Make-Announcement',
                 element: <Private><AdminPrivate><MakeAnnouncement /></AdminPrivate></Private>,

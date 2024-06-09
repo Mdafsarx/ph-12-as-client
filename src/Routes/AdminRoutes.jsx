@@ -11,13 +11,13 @@ const AdminRoutes = () => {
             <NavLink className={({isActive})=>isActive?
             `flex items-center text-sm gap-1 text-[#7EA1FF] `:`flex items-center text-sm gap-1 hover:text-[#7EA1FF]`} to={'/'}><ImProfile />Admin Profile</NavLink>
             <NavLink className={({isActive})=>isActive?
-            `flex items-center text-sm gap-1 text-[#7EA1FF] `:`flex items-center text-sm gap-1 hover:text-[#7EA1FF]`} to={'/'}><BsPeople />Manage Member</NavLink>
+            `flex items-center text-sm gap-1 text-[#7EA1FF] `:`flex items-center text-sm gap-1 hover:text-[#7EA1FF]`} to={'/dashboard/manage-Member'}><BsPeople />Manage Member</NavLink>
             <NavLink className={({isActive})=>isActive?
             `flex items-center text-sm gap-1 text-[#7EA1FF] `:`flex items-center text-sm gap-1 hover:text-[#7EA1FF]`} to={'/dashboard/Make-Announcement'}><TfiAnnouncement />Make Announcement</NavLink>
             <NavLink className={({isActive})=>isActive?
             `flex items-center text-sm gap-1 text-[#7EA1FF] `:`flex items-center text-sm gap-1 hover:text-[#7EA1FF]`} to={'/dashboard/Agreement-Request'}><FiFile />Agreement Requests</NavLink>
             <NavLink className={({isActive})=>isActive?
-            `flex items-center text-sm gap-1 text-[#7EA1FF] `:`flex items-center text-sm gap-1 hover:text-[#7EA1FF]`} to={'/'}><RiCoupon2Fill />Manage Coupons</NavLink>
+            `flex items-center text-sm gap-1 text-[#7EA1FF] `:`flex items-center text-sm gap-1 hover:text-[#7EA1FF]`} to={'/dashboard/coupon'}><RiCoupon2Fill />Manage Coupons</NavLink>
         </>
     );
 };

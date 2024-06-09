@@ -34,7 +34,7 @@
     "recat": "^0.0.0",
     "router-dom": "^2.2.11",
     "stripe": "^15.10.0",
-    "sweetalert2": "^11.11.0",
+    "sweetalert2": "^11.11.1",
     "swiper": "^11.1.4"
   },
   "devDependencies": {

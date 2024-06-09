@@ -19,6 +19,8 @@ import AdminPrivate from "../Private/AdminPrivate";
 import UserPrivate from "../Private/UserPrivate";
 import MemberPrivate from "../Private/MemberPrivate";
 import MemberAndUser from "../Private/MemberAndUser";
+import ManageMember from "../Pages/Dashboard/ManageMember";
+import Coupon from "../Pages/Dashboard/Coupon";
 
 const route = createBrowserRouter([
     //   main layout
@@ -67,16 +69,19 @@ const route = createBrowserRouter([
                 path: 'Agreement-Request',
                 element: <Private><AdminPrivate><AgreementRequest /></AdminPrivate></Private>
             },
-
-
+            {
+              path:'manage-Member',
+              element: <Private><AdminPrivate><ManageMember /></AdminPrivate></Private>
+            },
+            {
+              path:'coupon',
+              element: <Private><AdminPrivate><Coupon /></AdminPrivate></Private>
+            },
             // user
             {
                 path: 'user-Profile',
                 element: <Private><UserPrivate><Profile /></UserPrivate></Private>,
             },
-            
-
-
 
             // member
             {

@@ -77,7 +77,7 @@ const AgreementRequest = () => {
 
                     {
                         agreementData?.map((data, i) =>
-                            <div key={i} className="flex bg-base-100 shadow-xl border">
+                            <div key={i} className="flex bg-base-100 shadow-xl border" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="1000">
 
                                 <figure><img src={data?.image} className="w-64 h-full hidden md:block" /></figure>
 

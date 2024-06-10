@@ -36,7 +36,7 @@ const EmailLog = () => {
 
 
     return (
-        <div className="flex justify-center min-h-screen items-center">
+        <div className="flex justify-center min-h-screen items-center" data-aos="zoom-in" data-aos-duration="2000"  data-aos-delay="500">
             <div className="mx-4 md:w-[60%] min-h-[75vh] flex flex-col items-center text-center p-12 shadow-2xl border">
                 <h1 className="text-4xl font-serif pb-3">Welcome back</h1>
                 <p className="text-base">Login and enjoy the best  features <br /> of our website</p>

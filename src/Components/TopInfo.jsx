@@ -4,12 +4,12 @@ import { IoCallOutline, IoLocation } from "react-icons/io5";
 const TopInfo = () => {
     return (
         <div className="max-w-7xl mx-auto p-2 pb-3 flex flex-col md:flex-row items-center justify-between px-5 border-b-2 border-[#E49BFF]">
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-8" data-aos="fade-right" data-aos-duration="2000"  data-aos-delay="700">
                 <p className="flex items-center text-lg gap-1"><IoLocation className="text-[#7EA1FF]" /> Sylhet,Bangladesh</p>
                 <p className="flex items-center text-lg gap-1"><IoCallOutline className="text-[#7EA1FF]" />+01722877040</p>
             </div>
 
-            <div className="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
+            <div className="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13" data-aos="fade-left" data-aos-duration="2000"  data-aos-delay="700">
                 <a rel="noopener noreferrer" href="#" title="Email" className="flex items-center justify-center w-10 h-10 rounded-full bg-[#7EA1FF] text-white ">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
                         <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>

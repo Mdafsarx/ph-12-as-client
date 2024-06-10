@@ -16,7 +16,7 @@ const Building = () => {
             <section className="py-6">
                 <div className="flex flex-col lg:flex-row-reverse gap-8">
 
-                    <div className="lg:w-1/2">
+                    <div className="lg:w-1/2" data-aos="fade-left" data-aos-duration="1000">
 
                        <ul className="list-disc p-6 space-y-5 mt-4">
 
@@ -36,10 +36,14 @@ const Building = () => {
                     </div>
 
                     <div className="grid grid-cols-2 gap-6 lg:w-1/2">
-                    <img alt="" className="w-full  rounded shadow-sm h-72 aspect-square" src="https://images.unsplash.com/photo-1542447139-dea0a6257cee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8QXJjaGl0ZWN0dXJhbCUyMEV4Y2VsbGVuY2V8ZW58MHx8MHx8fDA%3D" />
-                    <img alt="" className="w-full  rounded shadow-sm h-72 aspect-square" src={img1} />
-                    <img alt="" className="w-full  rounded shadow-sm h-72 aspect-square" src={img2} />
-                    <img alt="" className="w-full  rounded shadow-sm h-72 aspect-square" src={img3} />
+                    <img data-aos="zoom-in" data-aos-duration="3000"  data-aos-delay="500"
+                     alt="" className="w-full  rounded shadow-sm h-72 aspect-square" src="https://images.unsplash.com/photo-1542447139-dea0a6257cee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8QXJjaGl0ZWN0dXJhbCUyMEV4Y2VsbGVuY2V8ZW58MHx8MHx8fDA%3D" />
+                    <img data-aos="zoom-in" data-aos-duration="3000"  data-aos-delay="1200"
+                     alt="" className="w-full  rounded shadow-sm h-72 aspect-square" src={img1} />
+                    <img data-aos="zoom-in" data-aos-duration="3000"  data-aos-delay="1900" 
+                     alt="" className="w-full  rounded shadow-sm h-72 aspect-square" src={img2} />
+                    <img data-aos="zoom-in" data-aos-duration="3000"  data-aos-delay="2600"
+                     alt="" className="w-full  rounded shadow-sm h-72 aspect-square" src={img3} />
                     </div>
 
                 </div>

@@ -14,21 +14,24 @@ const Nav = () => {
     const [open, setOpen] = useState(false);
     const [isShow, setIsShow] = useState(false)
     const { user, logout, loading } = useAuth();
-    const [role]=useRole()
+    const [role] = useRole()
 
     const navLink =
         <>
-            <NavLink className={({isActive})=>isActive?`flex flex-col justify-center items-center text-white border-b-2 border-[#7EA1FF]`:`flex flex-col justify-center text-white items-center`} to={'/'}>
-                <BiHome className="text-sm text-[#7EA1FF] hidden md:flex" /><span className="text-xs uppercase font-bold">HOME</span>
+            <NavLink data-aos="zoom-in" data-aos-duration="3000"  data-aos-delay="1000"
+                className={({ isActive }) => isActive ? `flex flex-col justify-center items-center text-white border-b-2 border-[#7EA1FF]` : `flex flex-col justify-center text-white items-center`} to={'/'}>
+                <BiHome className="text-sm text-[#7EA1FF] hidden lg:flex" /><span className="text-xs uppercase font-bold">HOME</span>
             </NavLink>
 
-            <NavLink className={({isActive})=>isActive?`flex flex-col justify-center items-center text-white border-b-2 border-[#7EA1FF]`:`flex flex-col justify-center text-white items-center`} to={'/apartment'}>
-                <MdApartment className="text-sm text-[#7EA1FF] hidden md:flex" />
+            <NavLink data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="1500"
+             className={({ isActive }) => isActive ? `flex flex-col justify-center items-center text-white border-b-2 border-[#7EA1FF]` : `flex flex-col justify-center text-white items-center`} to={'/apartment'}>
+                <MdApartment className="text-sm text-[#7EA1FF] hidden lg:flex" />
                 <span className="text-xs uppercase font-bold">Apartment</span>
             </NavLink>
 
-            <NavLink className={'flex flex-col justify-center items-center text-white'} to={role==='user'?'/dashboard/user-Profile':role==='member'?'/dashboard/member-Profile':'/dashboard/admin-Profile'}>
-                <MdApartment className="text-sm text-[#7EA1FF] hidden md:flex" />
+            <NavLink data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="2000"
+             className={'flex flex-col justify-center items-center text-white'} to={role === 'user' ? '/dashboard/user-Profile' : role === 'member' ? '/dashboard/member-Profile' : '/dashboard/admin-Profile'}>
+                <MdApartment className="text-sm text-[#7EA1FF] hidden lg:flex" />
                 <span className="text-xs uppercase font-bold">Dashboard</span>
             </NavLink>
         </>
@@ -54,7 +57,7 @@ const Nav = () => {
 
 
 
-                        <a className="flex items-center gap-0 "><img width="48" height="48" src="https://img.icons8.com/pulsar-gradient/48/commercial-development-management.png" alt="commercial-development-management" /><span className="text-xl text-white font-bold">ONE</span><span className="text-[#E49BFF] font-bold mt-0.5">BUILD</span></a>
+                        <a data-aos="fade-down" data-aos-duration="3000" className="flex items-center gap-0 "><img width="48" height="48" src="https://img.icons8.com/pulsar-gradient/48/commercial-development-management.png" alt="commercial-development-management" /><span className="text-xl text-white font-bold">ONE</span><span className="text-[#E49BFF] font-bold mt-0.5">BUILD</span></a>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal flex items-center gap-6">
@@ -62,7 +65,7 @@ const Nav = () => {
                         </ul>
                     </div>
 
-                    <div className="navbar-end">
+                    <div className="navbar-end" data-aos="fade-down" data-aos-duration="3000">
 
                         <>
                             {

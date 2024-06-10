@@ -52,8 +52,10 @@ const DashBoardLayout = () => {
 
                         {/* static routes */}
                         <div className="space-y-3">
-                            <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'} to={'/'}><BiHome /><span className="hidden lg:flex">Home</span></NavLink>
-                            <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'} to={'/apartment'}><MdApartment /><span className="hidden lg:flex">Apartment</span></NavLink>
+                            <NavLink  
+                             className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'} to={'/'}><BiHome /><span className="hidden lg:flex">Home</span></NavLink>
+                            <NavLink 
+                            className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'} to={'/apartment'}><MdApartment /><span className="hidden lg:flex">Apartment</span></NavLink>
                         </div>
 
 

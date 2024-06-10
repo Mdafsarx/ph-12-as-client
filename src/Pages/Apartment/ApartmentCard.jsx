@@ -59,7 +59,7 @@ const ApartmentCard = ({ data }) => {
 
 
     return (
-        <div>
+        <div  data-aos="zoom-in" data-aos-duration="3000"  data-aos-delay="500">
             <div className="bg-base-100 shadow-2xl hover:scale-110">
                 <figure>
                     <img src={apartmentImage} alt={name} className="h-52 w-full " />

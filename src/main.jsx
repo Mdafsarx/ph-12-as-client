@@ -6,10 +6,14 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Auth from './Auth/Auth'
 import { Toaster } from 'react-hot-toast'
 const queryClient = new QueryClient()
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <div className='overflow-x-hidden'>
+  <div className='overflow-x-hidden overflow-y-hidden'>
     <Auth>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={route} />

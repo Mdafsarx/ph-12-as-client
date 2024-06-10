@@ -33,7 +33,7 @@ const Coupons = () => {
 
             <section className="grid md:grid-cols-2 gap-6 mx-4 lg:mx-40">
 
-                <div className=" h-52 flex items-center  gap-8 shadow-2xl border">
+                <div className=" h-52 flex items-center  gap-8 shadow-2xl border" data-aos="flip-right" data-aos-duration="1000">
                     <div className="text-center pl-8">
                         <h1 className="text-8xl font-bold">50%</h1>
                         <p className="text-3xl ">Coupon sale <br /> limited only</p>
@@ -44,7 +44,7 @@ const Coupons = () => {
                     </div>
                 </div>
 
-                <div className=" h-52 flex items-center  gap-8 shadow-2xl border">
+                <div className=" h-52 flex items-center  gap-8 shadow-2xl border" data-aos="flip-left" data-aos-duration="1000">
 
                     <div className="bg-[#006266] text-center h-52 w-full rounded-r-3xl pl-8 flex flex-col justify-center p-4 items-center text-white">
                         <h1 className="text-4xl font-bold">Super <br />discount</h1>
@@ -57,7 +57,7 @@ const Coupons = () => {
                     </div>
                 </div>
 
-                <div className=" h-52 flex flex-col items-center  gap-5 shadow-2xl border">
+                <div className=" h-52 flex flex-col items-center  gap-5 shadow-2xl border" data-aos="flip-right" data-aos-duration="1000">
 
                     <div className=" bg-[#ffaf40] p-1 rounded-b-3xl text-center space-y-2 w-full text-white">
                         <h1 className="text-3xl font-bold ">Big sale</h1>
@@ -71,7 +71,7 @@ const Coupons = () => {
 
                 </div>
 
-                <div className=" h-52 flex items-center  gap-8 shadow-2xl border">
+                <div className=" h-52 flex items-center  gap-8 shadow-2xl border" data-aos="flip-left" data-aos-duration="1000">
                     <div className="text-center pl-8">
                     <img src={img4} className="px-4"/>
                         <p className="-mt-2"><span className="text-lg font-bold">Code:</span>99557</p>

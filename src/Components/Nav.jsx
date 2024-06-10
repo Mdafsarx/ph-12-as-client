@@ -8,11 +8,13 @@ import useAuth from "../Hooks/useAuth";
 import { CiMenuBurger } from "react-icons/ci";
 import toast from "react-hot-toast";
 import { HashLoader } from "react-spinners";
+import useRole from "../Hooks/useRole";
 
 const Nav = () => {
     const [open, setOpen] = useState(false);
     const [isShow, setIsShow] = useState(false)
-    const { user, logout, loading } = useAuth()
+    const { user, logout, loading } = useAuth();
+    const [role]=useRole()
 
     const navLink =
         <>
@@ -25,7 +27,7 @@ const Nav = () => {
                 <span className="text-xs uppercase font-bold">Apartment</span>
             </NavLink>
 
-            <NavLink className={'flex flex-col justify-center items-center text-white'} to={'/dashboard'}>
+            <NavLink className={'flex flex-col justify-center items-center text-white'} to={role==='user'?'/dashboard/user-Profile':role==='member'?'/dashboard/member-Profile':'/dashboard/admin-Profile'}>
                 <MdApartment className="text-sm text-[#7EA1FF]" />
                 <span className="text-xs uppercase font-bold">Dashboard</span>
             </NavLink>

@@ -17,7 +17,7 @@ const Coupons = () => {
                     <span style={{ color: 'blue', fontWeight: 'bold' }}>
                         {/* Style will be inherited from the parent element */}
                         <Typewriter
-                            words={['for you', 'for this week', '50% discount','75% discount','25% discount','80% discount']}
+                            words={['for you', 'for this week', '50% discount','70% discount','25% discount','80% discount']}
                             loop={Infinity}
                             cursor
                             cursorStyle='_'

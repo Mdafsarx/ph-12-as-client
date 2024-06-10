@@ -15,7 +15,7 @@ const MakeAnnouncement = () => {
         e.preventDefault()
         const title = e.target.title.value;
         const description = e.target.description.value;
-        axiosUrl.post('/announcement', { title, description })
+        axiosUrl.post('/announcement', { title, description},{headers:{authorization:localStorage.getItem('token')}})
             .then(data => {
                 if (data.data.insertedId) {
                     toast.success('Announcement sended')

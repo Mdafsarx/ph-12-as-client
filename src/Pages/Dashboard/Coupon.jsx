@@ -8,11 +8,11 @@ const Coupon = () => {
     const { data = [] ,refetch} = useQuery({
         queryKey: ['coupon'],
         queryFn: async () => {
-            const data = await axiosUrl('/coupon');
+            const data = await axiosUrl('/coupon',{headers:{authorization:localStorage.getItem('token')}});
             return data.data
         }
     })
-    console.log(data)
+    // console.log(data)
 
 
     const handleSubmit=(e)=>{
@@ -20,7 +20,7 @@ const Coupon = () => {
         const coupon=e.target.coupon.value;
         const discount=e.target.discount.value;
         const description=e.target.description.value;
-        axiosUrl.post('/coupon',{coupon_code:coupon,discount_percentage:discount,coupon_description:description})
+        axiosUrl.post('/coupon',{coupon_code:coupon,discount_percentage:discount,coupon_description:description},{headers:{authorization:localStorage.getItem('token')}})
         .then(data=>{
             if(data.data.insertedId){
                 toast.success('Coupon added successful');
@@ -34,7 +34,8 @@ const Coupon = () => {
 
     return (
         <div className="px-20 md:px-5 py-4">
-            <div className="overflow-x-auto">
+
+            <div className="overflow-x-auto" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="500">
                 <table className="table">
                     {/* head */}
                     <thead>

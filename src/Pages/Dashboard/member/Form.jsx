@@ -30,7 +30,7 @@ const Form = ({ date: month }) => {
     const { data: Data = [], refetch: reload } = useQuery({
         queryKey: ['coupon', user?.email],
         queryFn: async () => {
-            const res = await axiosUrl(`coupon`)
+            const res = await axiosUrl(`/coupon`,{headers:{authorization:localStorage.getItem('token')}})
             return res.data;
         }
     })

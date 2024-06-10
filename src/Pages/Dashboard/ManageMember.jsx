@@ -26,7 +26,7 @@ const ManageMember = () => {
           }).then((result) => {
             if (result.isConfirmed) {
 
-              axiosUrl.put(`/user?email=${email}`,{Role:'user'})
+              axiosUrl.put(`/user?email=${email}`,{Role:'user'},{headers:{authorization:localStorage.getItem('token')}})
               .then(data=>{
                 if(data.data.modifiedCount){
                     Swal.fire({

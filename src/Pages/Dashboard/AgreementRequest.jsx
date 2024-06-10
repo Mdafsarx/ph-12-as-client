@@ -24,10 +24,10 @@ const AgreementRequest = () => {
 
 
     const handleAccept=(email,id)=>{
-       axiosUrl.put(`/agreement?email=${email}`,{status:'checked',date1: today1, mount1, year1})
+       axiosUrl.put(`/agreement?email=${email}`,{status:'checked',date1: today1, mount1, year1},{headers:{authorization:localStorage.getItem('token')}})
        .then(data=>{
           if(data.data.modifiedCount){
-            axiosUrl.put(`/user?email=${email}`,{Role:'member'})
+            axiosUrl.put(`/user?email=${email}`,{Role:'member'},{headers:{authorization:localStorage.getItem('token')}})
             .then(data=>{
                 if(data.data.modifiedCount){
                     axiosUrl.delete(`/agreementAdmin?id=${id}`)
@@ -47,7 +47,7 @@ const AgreementRequest = () => {
 
 
     const handleReject=(email,id)=>{
-        axiosUrl.put(`/agreement?email=${email}`,{status:'checked'})
+        axiosUrl.put(`/agreement?email=${email}`,{status:'checked'},{headers:{authorization:localStorage.getItem('token')}})
         .then(data=>{
            if(data.data.modifiedCount){
             axiosUrl.delete(`/agreementAdmin?id=${id}`)
@@ -70,10 +70,10 @@ const AgreementRequest = () => {
 
     return (
         <div className="p-10">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-4xl mx-auto"  >
                 <h1 className="text-center text-2xl font-serif text-[#E49BFF] ">Agreement Request ({agreementData.length})</h1>
 
-                <div className="my-10">
+                <div className="my-10" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="1000">
 
                     {
                         agreementData?.map((data, i) =>

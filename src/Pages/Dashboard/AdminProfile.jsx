@@ -19,7 +19,7 @@ const AdminProfile = () => {
     const [AvailableRooms,Unavailable]=useAvailable();
 
     return (
-        <div className="p-20 max-w-5xl mx-auto space-y-10">
+        <div className="px-14 p-2 md:p-20 max-w-5xl mx-auto space-y-10 ">
 
             <div>
                 <h1 className="text-2xl font-bold pb-4 text-center pl-2 uppercase "><span className="text-[#E49BFF]">PROFILE</span></h1>
@@ -51,9 +51,8 @@ const AdminProfile = () => {
                 </div>
             </div>
 
-
             {/* website details */}
-            <div className="grid grid-cols-5 gap-10">
+            <div className="grid md:grid-cols-5 gap-10">
 
                 <div className="bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl h-44 flex flex-col items-center justify-center">
                     <MdApartment className="text-8xl text-white" />

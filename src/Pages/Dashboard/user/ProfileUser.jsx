@@ -29,15 +29,15 @@ const Profile = () => {
 
 
     return (
-        <div className="p- max-w-3xl mx-auto">
+        <div className=" max-w-3xl mx-auto">
 
 
 
-            <div className="p-14 space-y-10">
+            <div className="p-10 md:ml-40 lg:ml-0 lg:p-14 space-y-10 ">
 
                 {/* profile */}
                 <div>
-                    <h1 className="text-2xl font-bold pb-4 text-start pl-2 uppercase "><span className="text-[#E49BFF]">PROFILE</span></h1>
+                    <h1 className="text-xl md:text-2xl font-bold pb-4 text-start pl-2 uppercase "><span className="text-[#E49BFF]">PROFILE</span></h1>
                     <div className="p-8 flex flex-col items-center md:flex-row gap-5 shadow-lg rounded-lg border">
                         <div>
                             <img src={user?.photoURL} className="rounded-lg size-36" />
@@ -69,7 +69,7 @@ const Profile = () => {
 
                 {/* agreement */}
                 <div>
-                    <h1 className="text-2xl font-bold pb-4 text-start pl-2 uppercase "><span className="text-[#7EA1FF]">Agreement accept info</span></h1>
+                    <h1 className=" text-xl md:text-2xl font-bold pb-4 text-center md:text-start pl-2 uppercase"><span className="text-[#7EA1FF]">Agreement accept info</span></h1>
                     <div className="flex bg-base-100 shadow-xl border rounded-lg">
                         <div className="flex-1 p-4">
                             <div className="h-10 flex items-center justify-center gap-2 mx-auto px-4 ">

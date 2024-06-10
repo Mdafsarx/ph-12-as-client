@@ -30,7 +30,7 @@ const PaymentHistory = () => {
 
 
     return (
-        <div className="px-10 pt-5">
+        <div className="px-20 md:px-10 pt-5">
 
             <form onSubmit={handleSearch} className="py-5">
                 <fieldset className="space-y-1 mx-auto">
@@ -60,23 +60,23 @@ const PaymentHistory = () => {
                                 {/* head */}
                                 <thead>
                                     <tr>
-                                        <th></th>
+                                        <th  ></th>
                                         <th className="text-[#E49BFF]">Name</th>
-                                        <th className="text-[#E49BFF]">Email</th>
+                                        <th className="text-[#E49BFF] hidden md:flex">Email</th>
                                         <th className="text-[#E49BFF]">Price$</th>
                                         <th className="text-[#E49BFF]">Month</th>
-                                        <th className="text-[#E49BFF]">Payment date</th>
+                                        <th className="text-[#E49BFF] hidden md:flex">Payment date</th>
 
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {history?.map((Data, i) => <tr key={i}>
-                                        <th>{i + 1}</th>
+                                        <th >{i + 1}</th>
                                         <td>{Data.name}</td>
-                                        <td>{Data.email}</td>
+                                        <td  className="hidden md:flex">{Data.email}</td>
                                         <td>{Data.price}</td>
                                         <td>{Data.month}</td>
-                                        <td>{Data.paymentDate}/{Data?.paymentMonth}/{Data?.paymentYear}</td>
+                                        <td  className="hidden md:flex">{Data.paymentDate}/{Data?.paymentMonth}/{Data?.paymentYear}</td>
                                     </tr>)}
 
                                 </tbody>

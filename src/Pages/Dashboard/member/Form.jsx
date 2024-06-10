@@ -144,7 +144,7 @@ const Form = ({ date: month }) => {
 
 
     return (
-        <div className="max-w-6xl mx-auto p-20">
+        <div className="max-w-6xl mx-auto p-14 md:p-20">
 
             <form onSubmit={handleSubmit2} className="flex items-center justify-between pb-5 pr-2">
                 <div className="flex items-center">

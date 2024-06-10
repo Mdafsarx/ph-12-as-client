@@ -19,16 +19,16 @@ const Nav = () => {
     const navLink =
         <>
             <NavLink className={({isActive})=>isActive?`flex flex-col justify-center items-center text-white border-b-2 border-[#7EA1FF]`:`flex flex-col justify-center text-white items-center`} to={'/'}>
-                <BiHome className="text-sm text-[#7EA1FF]" /><span className="text-xs uppercase font-bold">HOME</span>
+                <BiHome className="text-sm text-[#7EA1FF] hidden md:flex" /><span className="text-xs uppercase font-bold">HOME</span>
             </NavLink>
 
             <NavLink className={({isActive})=>isActive?`flex flex-col justify-center items-center text-white border-b-2 border-[#7EA1FF]`:`flex flex-col justify-center text-white items-center`} to={'/apartment'}>
-                <MdApartment className="text-sm text-[#7EA1FF]" />
+                <MdApartment className="text-sm text-[#7EA1FF] hidden md:flex" />
                 <span className="text-xs uppercase font-bold">Apartment</span>
             </NavLink>
 
             <NavLink className={'flex flex-col justify-center items-center text-white'} to={role==='user'?'/dashboard/user-Profile':role==='member'?'/dashboard/member-Profile':'/dashboard/admin-Profile'}>
-                <MdApartment className="text-sm text-[#7EA1FF]" />
+                <MdApartment className="text-sm text-[#7EA1FF] hidden md:flex" />
                 <span className="text-xs uppercase font-bold">Dashboard</span>
             </NavLink>
         </>
@@ -46,7 +46,7 @@ const Nav = () => {
                             }}>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                             </div>
-                            <ul tabIndex={0} className={`menu menu-sm dropdown-content mt-3 z-50 p-2 shadow bg-black rounded-box w-auto ${open ? 'block' : 'hidden'}`}>
+                            <ul tabIndex={0} className={`menu menu-sm dropdown-content space-y-1 mt-3 z-50 p-2 shadow bg-black rounded-box w-auto ${open ? 'block' : 'hidden'}`}>
                                 {navLink}
                             </ul>
 

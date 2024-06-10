@@ -28,17 +28,19 @@ const DashBoardLayout = () => {
             <div className="flex">
 
                 {/* dashboard */}
-                <div className="bg-black w-48 min-h-screen text-white relative">
+                <div className="bg-black w-auto lg:w-48 pr-1 min-h-screen text-white relative">
 
                     {/* website name */}
                     <div className="p-2 mt-1">
                         <a className="flex items-center gap-0 ">
-                            <img width="44" height="44" src="https://img.icons8.com/pulsar-gradient/48/commercial-development-management.png" alt="commercial-development-management" />
-                            <span className="text-xl text-white font-bold">ONE</span><span className="text-[#E49BFF] font-bold mt-0.5">BUILD</span></a>
+                            <img className="size-9" src="https://img.icons8.com/pulsar-gradient/48/commercial-development-management.png" alt="commercial-development-management" />
+                           <p className="hidden lg:flex items-center"> <span className="text-xl text-white font-bold">ONE</span>
+                           <span className="text-[#E49BFF] font-bold mt-0.5">BUILD</span></p>
+                            </a>
                     </div>
 
                     {/* routes */}
-                    <div className="p-4 space-y-3 mt-3 ">
+                    <div className="p-4 space-y-3 mt-3 flex flex-col items-center lg:items-start">
 
                         {/*  dynamic routes based on userRole */}
                         {
@@ -46,32 +48,32 @@ const DashBoardLayout = () => {
                         }
 
                         {/* divider */}
-                        <div className="divider divider-info pt-5 pb-2"></div>
+                        <div className="divider divider-info pt-5 pb-2 "></div>
 
                         {/* static routes */}
                         <div className="space-y-3">
-                            <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'} to={'/'}><BiHome />Home</NavLink>
-                            <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'} to={'/apartment'}><MdApartment />Apartment</NavLink>
+                            <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'} to={'/'}><BiHome /><span className="hidden lg:flex">Home</span></NavLink>
+                            <NavLink className={'flex items-center text-sm gap-1 hover:text-[#7EA1FF]'} to={'/apartment'}><MdApartment /><span className="hidden lg:flex">Apartment</span></NavLink>
                         </div>
 
 
                     </div>
 
                     {/* logout */}
-                    <div className="flex items-center  gap-0.5 p-1  cursor-pointer hover:underline absolute bottom-6 left-4" onClick={() => {
+                    <div className="flex items-center  gap-0.5 p-1  cursor-pointer hover:underline absolute bottom-6 left-4 " title="Logout" onClick={() => {
                         logout()
                             .then(() => toast.success('Logout successful'))
                             .catch((error) => toast.error(error.message))
-                    }}><BiLogOut className="text-xl" />Logout</div>
+                    }}><BiLogOut className="text-xl" /><span className="hidden  lg:flex">Logout</span></div>
 
 
                 </div>
 
-                <div>
+                <div className="">
                     {/* active route name and user name */}
-                    <div className="bg-black w-[calc(100vw-192px)] h-14 flex items-center justify-between px-2">
-                        <h1 className="text-white text-xl uppercase">{location?.pathname.split('/')[2]}</h1>
-                        <h1 className="text-white text-xl uppercase">Date:{today}/{mount}/{year}</h1>
+                    <div className="bg-black w-[calc(100vw-192px)] h-14 hidden lg:flex items-center justify-between px-2">
+                        <h1 className="text-white text-xl uppercase  ">{location?.pathname.split('/')[2]}</h1>
+                        <h1 className="text-white text-xl uppercase  hidden lg:flex">Date:{today}/{mount}/{year}</h1>
                     </div>
 
                     {/* outlet */}
@@ -79,6 +81,7 @@ const DashBoardLayout = () => {
                         <Outlet />
                     </div>
                 </div>
+
             </div>
 
 

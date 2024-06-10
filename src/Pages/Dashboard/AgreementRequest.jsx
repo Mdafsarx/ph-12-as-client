@@ -79,9 +79,10 @@ const AgreementRequest = () => {
                         agreementData?.map((data, i) =>
                             <div key={i} className="flex bg-base-100 shadow-xl border">
 
-                                <figure><img src={data?.image} className="w-64 h-full" /></figure>
+                                <figure><img src={data?.image} className="w-64 h-full hidden md:block" /></figure>
 
                                 <div className="flex-1 p-4">
+
                                     <div className="h-10 flex items-center gap-2 mx-auto px-4 ">
                                         <span><BiBed /></span>
                                         <span><TiWiFi /></span>
@@ -93,12 +94,12 @@ const AgreementRequest = () => {
                                     </div>
 
                                     <div>
-                                        <div className="flex justify-between items-center px-4">
+                                        <div className="flex flex-col md:flex-row justify-between items-center px-4">
                                             <h2 className="font-bold text-xl">{data?.apartmentName}</h2>
-                                            <p className="text-4xl">${data?.rent}</p>
+                                            <p className="text-2xl md:text-4xl">${data?.rent}</p>
                                         </div>
 
-                                        <div className="flex items-center justify-between">
+                                        <div className="flex flex-col md:flex-row items-center justify-between">
                                             <div className="p-4">
                                                 <p><span className="font-bold">user:</span> {data?.userName}</p>
                                                 <p><span className="font-bold">email:</span> {data?.email}</p>

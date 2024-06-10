@@ -52,13 +52,13 @@ const ManageMember = () => {
 
 
     return (
-        <div className="px-5 py-5">
+        <div className="px-5 py-5 ">
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
                     <thead>
                         <tr>
-                            <th></th>
+                            <th className="hidden md:flex"></th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Action</th>
@@ -66,7 +66,7 @@ const ManageMember = () => {
                     </thead>
                     <tbody>
                         {member?.map((Data,i)=> <tr key={i}>
-                            <th>{i+1}</th>
+                            <th className="hidden md:flex">{i+1}</th>
                             <td>{Data.name}</td>
                             <td>{Data.email}</td>
                             <td><button className="btn btn-sm bg-[#E49BFF] text-white" onClick={()=>handleRemove(Data?.email)}>Remove</button></td>

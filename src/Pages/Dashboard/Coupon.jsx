@@ -33,7 +33,7 @@ const Coupon = () => {
     }
 
     return (
-        <div className="px-5 py-4">
+        <div className="px-20 md:px-5 py-4">
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}

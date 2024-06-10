@@ -40,13 +40,13 @@ const MakePayment = () => {
                        <Empty text={'There is nothing to pay$'} btnText={'Apartment'} link={'/apartment'}/>
                     </div>
                     :
-                    <section className="text-gray-50">
-                        <form className=" flex flex-col mx-auto  space-y-12 w-[1000px]" onSubmit={handleSubmit} data-aos="zoom-in" data-aos-duration="3000" >
+                    <section className="text-gray-50 px-6 md:px-40 lg:px-0">
+                        <form className=" flex flex-col mx-auto  space-y-12 lg:w-[800px]" onSubmit={handleSubmit} data-aos="zoom-in" data-aos-duration="3000" >
 
-                            <fieldset className="grid grid-cols-4 gap-6 p-6 md:rounded-2xl shadow-sm bg-gray-900 ">
+                            <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-2xl shadow-sm bg-gray-900 ">
 
                                 <div className="space-y-2 col-span-full hidden md:flex lg:col-span-1">
-                                    <img src={image} className="rounded-md" />
+                                    <img src={image} className="rounded-md hidden lg:flex" />
                                 </div>
 
 

@@ -5,7 +5,7 @@ Welcome to ONE BUILD, your ultimate solution for managing apartments, users, and
 ## Admin Credentials
 
 - **Admin Username:** afsar123@gmail.com
-- **Password:** afsarr
+- **Password:** 
 
 ## Live Site
 

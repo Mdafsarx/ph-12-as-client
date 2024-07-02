@@ -12,6 +12,32 @@ Welcome to ONE BUILD, your ultimate solution for managing apartments, users, and
 - Visit our live site [here](https://resplendent-cranachan-4047db.netlify.app)
 - Server site [here](https://github.com/Mdafsarx/ph-12-as-server)
 
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+Make sure you have Node.js and npm (or yarn) installed on your development machine.
+
+### Installation
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/your-project.git
+
+   cd your-project
+   npm install
+  # or
+  yarn install
+
+  npm start
+# or
+yarn start
+
+
+
+
   ## Features
 
 1. **Home Page:**

@@ -1,11 +1,5 @@
 # ONE BUILD
-
 Welcome to ONE BUILD, your ultimate solution for managing apartments, users, and payments seamlessly through a responsive, user-friendly interface.
-
-## Admin Credentials
-
-- **Admin Username:** afsar123@gmail.com
-- **Password:** 
 
 ## Live Site
 
@@ -68,11 +62,6 @@ Ensure any environment variables or configuration specific to your project are p
    - Integration with popular payment gateways for convenience.
 
 ## Package use
- - @designory/hover-image
-- @react-icons/all-files
-- @stripe/react-stripe-js
-- @stripe/stripe-js
-- @sweetalert2/theme-dark
 - @tanstack/react-query
 - aos
 - axios
@@ -82,24 +71,14 @@ Ensure any environment variables or configuration specific to your project are p
 - react-dom
 - react-hot-toast
 - react-icons
-- react-inner-image-zoom
 - react-leaflet
 - react-loading
-- react-paginate
 - react-router-dom
 - react-simple-typewriter
 - react-spinners
-- recat (assuming this might be a typo for React?)
-- router-dom (assuming this might be a typo for react-router-dom?)
 - stripe
-- sweetalert2
 - swiper
  
 
-## Getting Started
-
-To get started, visit our [live site](https://resplendent-cranachan-4047db.netlify.app) and log in with the admin credentials provided above. Explore the features, manage apartments, interact with users, and enjoy a streamlined experience with ONE BUILD.
-
-For any questions or support, please reach out to our support team.
 
 Thank you for choosing ONE BUILD!

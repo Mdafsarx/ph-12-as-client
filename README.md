@@ -6,8 +6,7 @@ Welcome to ONE BUILD, your ultimate solution for managing apartments, users, and
 - Visit our live site [here](https://resplendent-cranachan-4047db.netlify.app)
 - Server site [here](https://github.com/Mdafsarx/ph-12-as-server)
 
-
-  ## Features
+## Features
 
 1. **Apartment Management:**
    - Comprehensive tools to add, edit, and delete apartment listings.
@@ -23,7 +22,7 @@ Welcome to ONE BUILD, your ultimate solution for managing apartments, users, and
 
 
 
-## Package use
+## NPM Packages Used
 - @tanstack/react-query
 - react-router-dom
 - react-simple-typewriter
@@ -32,7 +31,7 @@ Welcome to ONE BUILD, your ultimate solution for managing apartments, users, and
 - swiper
 
 
-  ## Getting Started
+## Getting Started
 
 To get a local copy up and running follow these simple steps.
 
@@ -59,7 +58,7 @@ Make sure you have Node.js and npm (or yarn) installed on your development machi
    or
    yarn start
 
-#  Additional Notes:
+##  Additional Notes:
 Replace your-username and your-project with your actual GitHub username and project repository name.
 
  

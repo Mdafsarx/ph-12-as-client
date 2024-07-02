@@ -12,6 +12,36 @@ Welcome to ONE BUILD, your ultimate solution for managing apartments, users, and
 - Visit our live site [here](https://resplendent-cranachan-4047db.netlify.app)
 - Server site [here](https://github.com/Mdafsarx/ph-12-as-server)
 
+## Package use
+ - @designory/hover-image
+- @react-icons/all-files
+- @stripe/react-stripe-js
+- @stripe/stripe-js
+- @sweetalert2/theme-dark
+- @tanstack/react-query
+- aos
+- axios
+- deck.gl
+- firebase
+- leaflet
+- React
+- react-dom
+- react-hot-toast
+- react-icons
+- react-inner-image-zoom
+- react-leaflet
+- react-loading
+- react-paginate
+- react-router-dom
+- react-simple-typewriter
+- react-spinners
+- recat (assuming this might be a typo for React?)
+- router-dom (assuming this might be a typo for react-router-dom?)
+- stripe
+- sweetalert2
+- swiper
+ 
+
 ## Features
 
 1. **Home Page:**

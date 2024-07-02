@@ -21,27 +21,16 @@ Welcome to ONE BUILD, your ultimate solution for managing apartments, users, and
    - An intuitive admin dashboard to manage all aspects of the website.
    - Advanced analytics and reporting tools for apartment and user data.
 
-4. **Payment System:**
-   - Secure and reliable payment processing for apartment rentals and other transactions.
-   - Integration with popular payment gateways for convenience.
+
 
 ## Package use
 - @tanstack/react-query
-- aos
-- axios
-- firebase
-- leaflet
-- React
-- react-dom
-- react-hot-toast
-- react-icons
-- react-leaflet
-- react-loading
 - react-router-dom
 - react-simple-typewriter
 - react-spinners
 - stripe
 - swiper
+- ...........and more
 
 
   ## Getting Started
@@ -60,13 +49,11 @@ Make sure you have Node.js and npm (or yarn) installed on your development machi
    
    Navigate into the project directory: cd your-project
 
-
    Install dependencies:
    
    npm install
    or
    yarn install
-
 
    To run the project locally, use the following command:
    npm start
@@ -75,6 +62,5 @@ Make sure you have Node.js and npm (or yarn) installed on your development machi
 
 #  Additional Notes:
 Replace your-username and your-project with your actual GitHub username and project repository name.
-Modify the npm start or yarn start command as necessary if your project has a different setup for starting the development server.
-Ensure any environment variables or configuration specific to your project are properly set up before running locally.
+
  

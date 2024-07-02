@@ -25,38 +25,45 @@ Make sure you have Node.js and npm (or yarn) installed on your development machi
 1. Clone the repository:
    ```sh
    git clone https://github.com/your-username/your-project.git
+   
+   Navigate into the project directory: cd your-project
 
-   cd your-project
+
+   Install dependencies:
+   
    npm install
-  # or
-  yarn install
+   or
+   yarn install
 
-  npm start
-# or
-yarn start
+
+   To run the project locally, use the following command:
+   npm start
+   or
+   yarn start
+
+#  Additional Notes:
+Replace your-username and your-project with your actual GitHub username and project repository name.
+Modify the npm start or yarn start command as necessary if your project has a different setup for starting the development server.
+Ensure any environment variables or configuration specific to your project are properly set up before running locally.
 
 
 
 
   ## Features
 
-1. **Home Page:**
-   - A welcoming and informative landing page that provides an overview of the website's functionalities.
-   - Easy navigation to different sections of the site.
-
-2. **Apartment Management:**
+1. **Apartment Management:**
    - Comprehensive tools to add, edit, and delete apartment listings.
    - Detailed apartment profiles with images, descriptions, and amenities.
 
-3. **User Member Management:**
+2. **User Member Management:**
    - User registration and login system for both members and administrators.
    - Profile management for users to update their personal information and preferences.
 
-4. **Admin Dashboard:**
+3. **Admin Dashboard:**
    - An intuitive admin dashboard to manage all aspects of the website.
    - Advanced analytics and reporting tools for apartment and user data.
 
-5. **Payment System:**
+4. **Payment System:**
    - Secure and reliable payment processing for apartment rentals and other transactions.
    - Integration with popular payment gateways for convenience.
 

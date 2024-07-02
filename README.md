@@ -30,7 +30,6 @@ Welcome to ONE BUILD, your ultimate solution for managing apartments, users, and
 - react-spinners
 - stripe
 - swiper
-- ...........and more
 
 
   ## Getting Started

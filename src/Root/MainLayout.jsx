@@ -31,7 +31,6 @@ const MainLayout = () => {
                         <Footer />
                     </>
             }
-
         </div>
     );
 };

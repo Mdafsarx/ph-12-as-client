@@ -6,7 +6,7 @@ import OurApartment from "./OurApartment";
 
 const Home = () => {
     return (
-        <div>
+        <div className="text-white">
             <Banner />
             <Building/>
             <TopInfo/>

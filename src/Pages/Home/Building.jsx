@@ -5,9 +5,9 @@ import img3 from "../../images/3.jpg"
 
 const Building = () => {
     return (
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 ">
 
-            <div className="text-center pt-14">
+            <div className="text-center pt-14 pb-4">
                 <h1 className="text-3xl font-bold uppercase">About building</h1>
                 <p className="text-balance">Efficient building management ensures safe, <br /> sustainable, and comfortable environments through <br /> proactive  
                 maintenance, energy management,<br/> and advanced technology integration.</p>
@@ -36,14 +36,16 @@ const Building = () => {
                     </div>
 
                     <div className="grid grid-cols-2 gap-6 lg:w-1/2">
-                    <img data-aos="zoom-in" data-aos-duration="3000"  data-aos-delay="500"
+
+                    <img data-aos="zoom-in" data-aos-duration="1000"
                      alt="" className="w-full  rounded shadow-sm h-72 aspect-square" src="https://images.unsplash.com/photo-1542447139-dea0a6257cee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8QXJjaGl0ZWN0dXJhbCUyMEV4Y2VsbGVuY2V8ZW58MHx8MHx8fDA%3D" />
-                    <img data-aos="zoom-in" data-aos-duration="3000"  data-aos-delay="1200"
+                    <img data-aos="zoom-in" data-aos-duration="1000"  data-aos-delay="200"
                      alt="" className="w-full  rounded shadow-sm h-72 aspect-square" src={img1} />
-                    <img data-aos="zoom-in" data-aos-duration="3000"  data-aos-delay="1900" 
+                    <img data-aos="zoom-in" data-aos-duration="1000"  data-aos-delay="300" 
                      alt="" className="w-full  rounded shadow-sm h-72 aspect-square" src={img2} />
-                    <img data-aos="zoom-in" data-aos-duration="3000"  data-aos-delay="2600"
+                    <img data-aos="zoom-in" data-aos-duration="1000"  data-aos-delay="400"
                      alt="" className="w-full  rounded shadow-sm h-72 aspect-square" src={img3} />
+
                     </div>
 
                 </div>

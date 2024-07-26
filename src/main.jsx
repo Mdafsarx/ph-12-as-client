@@ -13,7 +13,7 @@ AOS.init();
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <div className='overflow-x-hidden overflow-y-hidden'>
+  <div className='overflow-x-hidden overflow-y-hidden bg-[#040709EB]'>
     <Auth>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={route} />

@@ -38,14 +38,13 @@ const Apartment = () => {
 
 
     return (
-        <div className="md:py-16 bg-[#F8F8F8] ">
+        <div className="md:py-16">
 
             <div>
                 <ApartmentBanner />
 
-
                 <div className="pt-20 pb-8">
-                    <h1 className="text-3xl text-[#7EA1FF] text-center "><span className="font-serif">Apartment Items</span> ({Data.length})</h1>
+                    <h1 className="text-3xl text-[#7EA1FF] text-center hover:text-[#E26EE5]"><span className="font-serif">Apartment Items</span> ({Data.length})</h1>
                 </div>
 
                 {/* all apartment show here */}

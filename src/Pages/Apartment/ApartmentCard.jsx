@@ -59,10 +59,12 @@ const ApartmentCard = ({ data }) => {
 
 
     return (
-        <div  data-aos="zoom-in" data-aos-duration="3000"  data-aos-delay="500">
-            <div className="bg-base-100 shadow-2xl hover:scale-110">
+        <div  data-aos="zoom-in-up" data-aos-duration="1500"  data-aos-delay="100">
+
+            <div className="bg-[#ffffffF2] shadow-2xl hover:scale-105 rounded-xl ">
+
                 <figure>
-                    <img src={apartmentImage} alt={name} className="h-52 w-full " />
+                    <img src={apartmentImage} alt={name} className="h-52 w-full rounded-t-xl" />
                 </figure>
 
                 <div className="flex flex-col items-start  p-3">
@@ -89,7 +91,7 @@ const ApartmentCard = ({ data }) => {
                 </div>
 
                 <div className="max-w-60 mx-auto pt-1 pb-4">
-                    <button className="btn btn-outline bg-[#E49BFF] border-0 border-b-4 border-[#7EA1FF] text-white shadow-md btn-block"
+                    <button className="btn btn-outline bg-[#E49BFF] hover:bg-[#7EA1FF] border-0 border-b-[5.5px] border-[#7EA1FF] hover:border-[#E49BFF] text-white shadow-md btn-block"
                         onClick={handleAgreement}
                     >Agreement</button>
                 </div>

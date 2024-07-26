@@ -18,18 +18,18 @@ const Nav = () => {
 
     const navLink =
         <>
-            <NavLink data-aos="zoom-in" data-aos-duration="3000"  data-aos-delay="1000"
+            <NavLink data-aos="zoom-in" data-aos-duration="2000"  data-aos-delay="100"
                 className={({ isActive }) => isActive ? `flex flex-col justify-center items-center text-white border-b-2 border-[#7EA1FF]` : `flex flex-col justify-center text-white items-center`} to={'/'}>
                 <BiHome className="text-sm text-[#7EA1FF] hidden lg:flex" /><span className="text-xs uppercase font-bold">HOME</span>
             </NavLink>
 
-            <NavLink data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="1500"
+            <NavLink data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="400"
              className={({ isActive }) => isActive ? `flex flex-col justify-center items-center text-white border-b-2 border-[#7EA1FF]` : `flex flex-col justify-center text-white items-center`} to={'/apartment'}>
                 <MdApartment className="text-sm text-[#7EA1FF] hidden lg:flex" />
                 <span className="text-xs uppercase font-bold">Apartment</span>
             </NavLink>
 
-            <NavLink data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="2000"
+            <NavLink data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="600"
              className={'flex flex-col justify-center items-center text-white'} to={role === 'user' ? '/dashboard/user-Profile' : role === 'member' ? '/dashboard/member-Profile' : '/dashboard/admin-Profile'}>
                 <MdApartment className="text-sm text-[#7EA1FF] hidden lg:flex" />
                 <span className="text-xs uppercase font-bold">Dashboard</span>
@@ -41,6 +41,7 @@ const Nav = () => {
         <div>
             <section className=" bg-black opacity-85 relative md:fixed  w-full z-40">
                 <div className="navbar max-w-7xl mx-auto">
+                    
                     <div className="navbar-start">
 
                         <div className="dropdown" >
@@ -55,17 +56,16 @@ const Nav = () => {
 
                         </div>
 
-
-
-                        <a data-aos="fade-down" data-aos-duration="3000" className="flex items-center gap-0 "><img width="48" height="48" src="https://img.icons8.com/pulsar-gradient/48/commercial-development-management.png" alt="commercial-development-management" /><span className="text-xl text-white font-bold">ONE</span><span className="text-[#E49BFF] font-bold mt-0.5">BUILD</span></a>
+                        <a data-aos="fade-down" data-aos-duration="1500" className="flex items-center gap-0 "><img width="48" height="48" src="https://img.icons8.com/pulsar-gradient/48/commercial-development-management.png" alt="commercial-development-management" /><span className="text-xl text-white font-bold">ONE</span><span className="text-[#E49BFF] font-bold mt-0.5">BUILD</span></a>
                     </div>
+
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal flex items-center gap-6">
                             {navLink}
                         </ul>
                     </div>
 
-                    <div className="navbar-end" data-aos="fade-down" data-aos-duration="3000">
+                    <div className="navbar-end" data-aos="fade-down" data-aos-duration="1500">
 
                         <>
                             {
@@ -103,6 +103,7 @@ const Nav = () => {
                         </>
 
                     </div>
+
                 </div>
             </section>
             {/* <TopInfo /> */}

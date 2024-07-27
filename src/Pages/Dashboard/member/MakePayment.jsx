@@ -41,7 +41,7 @@ const MakePayment = () => {
                     </div>
                     :
                     <section className="text-gray-50 px-6 md:px-40 lg:px-0">
-                        <form className=" flex flex-col mx-auto  space-y-12 lg:w-[800px]" onSubmit={handleSubmit} data-aos="zoom-in" data-aos-duration="3000" >
+                        <form className=" flex flex-col mx-auto  space-y-12 lg:w-[800px]" onSubmit={handleSubmit} data-aos="zoom-in" data-aos-duration="1000" >
 
                             <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-2xl shadow-sm bg-gray-900 ">
 

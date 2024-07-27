@@ -149,9 +149,9 @@ const Form = ({ date: month }) => {
             <form onSubmit={handleSubmit2} className="flex items-center justify-between pb-5 pr-2">
                 <div className="flex items-center">
                     <RiCoupon2Line className="text-[22px]" />
-                    <input type="text" name="coupon" placeholder="Coupon code" className=" ml-1.5 pl-0.5 outline-none" required />
+                    <input type="text" name="coupon" placeholder="Coupon code" className=" ml-1.5 pl-0.5 outline-none bg-[#181A1C]" required />
                 </div>
-                <button className="btn btn-sm bg-[#E49BFF] text-white ">Apply</button>
+                <button className="btn btn-sm bg-[#E49BFF] border-0 text-white hover:bg-[#7EA1FF] hover:text-black">Apply</button>
             </form>
 
             <form onSubmit={handleSubmit}>
@@ -160,9 +160,9 @@ const Form = ({ date: month }) => {
                         style: {
                             base: {
                                 fontSize: '16px',
-                                color: '#424770',
+                                color: '#ffffff',
                                 '::placeholder': {
-                                    color: '#aab7c4',
+                                    color: '#ffffff',
                                 },
                             },
                             invalid: {
@@ -176,7 +176,7 @@ const Form = ({ date: month }) => {
                     {transactionId && <p className="text-green-600"> Your transaction id: {transactionId}</p>}
                     <div className="flex flex-col items-end">
                         <p className="p-1">Total: <span>{totalPrice}</span></p>
-                        <button className="btn btn-sm bg-[#E49BFF] text-white" type="submit" disabled={!stripe || !clientSecret}>
+                        <button className="btn btn-sm bg-[#E49BFF] text-white border-0 hover:bg-[#7EA1FF] hover:text-black" type="submit" disabled={!stripe || !clientSecret}>
                             Pay$
                         </button>
                     </div>

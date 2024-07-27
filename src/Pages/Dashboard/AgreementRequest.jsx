@@ -110,8 +110,8 @@ const AgreementRequest = () => {
                                             </div>
 
                                             <div className="flex flex-col items-center space-y-2">
-                                              <div><button className="btn btn-sm bg-[#7EA1FF] text-white" onClick={()=>handleAccept(data?.email,data?._id)}>Accept button</button></div>
-                                              <div><button className="btn btn-sm bg-[#E49BFF] text-white" onClick={()=>handleReject(data?.email,data?._id)}>Reject button</button></div>
+                                              <div><button className="btn btn-sm bg-[#7EA1FF] text-white hover:bg-[#E49BFF] hover:text-black" onClick={()=>handleAccept(data?.email,data?._id)}>Accept button</button></div>
+                                              <div><button className="btn btn-sm bg-[#E49BFF] text-white hover:bg-[#7EA1FF] hover:text-black" onClick={()=>handleReject(data?.email,data?._id)}>Reject button</button></div>
                                             </div>
                                         </div>
 

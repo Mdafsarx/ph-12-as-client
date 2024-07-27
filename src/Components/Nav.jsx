@@ -65,7 +65,7 @@ const Nav = () => {
                         </ul>
                     </div>
 
-                    <div className="navbar-end" data-aos="fade-down" data-aos-duration="1500">
+                    <div className="navbar-end text-black" data-aos="fade-down" data-aos-duration="1500">
 
                         <>
                             {

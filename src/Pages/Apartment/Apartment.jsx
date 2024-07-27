@@ -38,7 +38,7 @@ const Apartment = () => {
 
 
     return (
-        <div className="md:py-16">
+        <div className="md:py-16 text-black">
 
             <div>
                 <ApartmentBanner />

@@ -37,12 +37,6 @@ const ManageMember = () => {
                 }
                 refetch()
               })
-
-
-
-
-
-           
             }
           });
     }
@@ -59,9 +53,9 @@ const ManageMember = () => {
                     <thead>
                         <tr>
                             <th className="hidden md:flex"></th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Action</th>
+                            <th className="text-[#7EA1FF]">Name</th>
+                            <th className="text-[#7EA1FF]">Email</th>
+                            <th className="text-[#7EA1FF]">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -69,7 +63,7 @@ const ManageMember = () => {
                             <th className="hidden md:flex">{i+1}</th>
                             <td>{Data.name}</td>
                             <td>{Data.email}</td>
-                            <td><button className="btn btn-sm bg-[#E49BFF] text-white" onClick={()=>handleRemove(Data?.email)}>Remove</button></td>
+                            <td><button className="btn btn-sm bg-[#E49BFF] text-white border-0 hover:bg-[#7EA1FF] hover:text-black" onClick={()=>handleRemove(Data?.email)}>Remove</button></td>
                         </tr>)}
                        
                    

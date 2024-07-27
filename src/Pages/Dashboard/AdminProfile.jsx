@@ -23,7 +23,7 @@ const AdminProfile = () => {
 
             <div >
                 <h1 className="text-2xl font-bold pb-4 text-center pl-2 uppercase "><span className="text-[#E49BFF]">PROFILE</span></h1>
-                <div className="p-8 flex flex-col items-center md:flex-row gap-5 shadow-lg rounded-2xl border" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="500">
+                <div className="p-8 flex flex-col items-center md:flex-row gap-5 shadow-lg rounded-2xl border" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="200">
                     <div>
                         <img src={user?.photoURL} className="rounded-lg size-36" />
                     </div>
@@ -55,7 +55,7 @@ const AdminProfile = () => {
             <div className="grid md:grid-cols-5 gap-10">
 
 
-                <div data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="1000"
+                <div data-aos="zoom-in" data-aos-duration="2000" 
                  className="bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl h-44 flex flex-col items-center justify-center">
                     <MdApartment className="text-8xl text-white" />
                     <div className="text-center ">
@@ -64,7 +64,7 @@ const AdminProfile = () => {
                     </div>
                 </div>
 
-                <div data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="1500"
+                <div data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="300"
                  className="bg-gradient-to-r from-pink-400 to-red-500 rounded-2xl h-44 flex flex-col items-center justify-center">
                     <MdEventAvailable className="text-8xl text-white" />
                     <div className="text-center ">
@@ -74,7 +74,7 @@ const AdminProfile = () => {
                 </div>
 
 
-                <div data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="2000"
+                <div data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="600"
                  className="bg-gradient-to-r from-gray-400 to-gray-300 rounded-2xl h-44 flex flex-col items-center justify-center">
                     <CgUnavailable className="text-8xl text-white" />
                     <div className="text-center ">
@@ -84,7 +84,7 @@ const AdminProfile = () => {
                 </div>
 
 
-                <div data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="2500"
+                <div data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="900"
                  className="bg-gradient-to-r from-amber-500 to-yellow-300 rounded-2xl h-44 flex flex-col items-center justify-center">
                     <FaUsers className="text-8xl text-white" />
                     <div className="text-center ">
@@ -94,7 +94,7 @@ const AdminProfile = () => {
                 </div>
 
 
-                <div data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="3000"
+                <div data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="1200"
                 className="bg-gradient-to-r from-purple-500 to-purple-800 rounded-2xl h-44 flex flex-col items-center justify-center">
                     <MdCardMembership className="text-8xl text-white" />
                     <div className="text-center ">

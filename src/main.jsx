@@ -12,8 +12,9 @@ import 'aos/dist/aos.css'; // You can also use <link> for styles
 AOS.init();
 
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <div className='overflow-x-hidden overflow-y-hidden bg-[#040709EB]'>
+  <div className='text-white  overflow-x-hidden overflow-y-hidden bg-[#040709EB] '>
     <Auth>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={route} />

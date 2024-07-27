@@ -36,7 +36,7 @@ const Profile = () => {
             <div className="p-10 md:ml-40 lg:ml-0 lg:p-14 space-y-10 ">
 
                 {/* profile */}
-                <div data-aos="fade-down" data-aos-duration="3000" data-aos-delay="1000">
+                <div data-aos="fade-down" data-aos-duration="1500">
                     <h1 className="text-xl md:text-2xl font-bold pb-4 text-start pl-2 uppercase "><span className="text-[#E49BFF]">PROFILE</span></h1>
                     <div className="p-8 flex flex-col items-center md:flex-row gap-5 shadow-lg rounded-lg border">
                         <div>
@@ -68,7 +68,7 @@ const Profile = () => {
 
 
                 {/* agreement */}
-                <div  data-aos="fade-up" data-aos-duration="3000" data-aos-delay="1000">
+                <div className="text-black"  data-aos="fade-up" data-aos-duration="1500">
                     <h1 className=" text-xl md:text-2xl font-bold pb-4 text-center md:text-start pl-2 uppercase"><span className="text-[#7EA1FF]">Agreement accept info</span></h1>
                     <div className="flex bg-base-100 shadow-xl border rounded-lg">
                         <div className="flex-1 p-4">

@@ -35,14 +35,14 @@ const Coupon = () => {
     return (
         <div className="px-20 md:px-5 py-4">
 
-            <div className="overflow-x-auto" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="500">
+            <div className="overflow-x-auto" >
                 <table className="table">
                     {/* head */}
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Coupon code</th>
-                            <th>Discount</th>
+                            <th className="text-[#7EA1FF]">Coupon code</th>
+                            <th className="text-[#7EA1FF]">Discount</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,7 +56,7 @@ const Coupon = () => {
                 </table>
             </div>
             <div className="flex justify-end">
-                <button className="btn btn-sm bg-[#E49BFF] text-white mt-8 m-2" onClick={() => document.getElementById('my_modal_5').showModal()}>Add coupon</button>
+                <button className="btn btn-sm bg-[#E49BFF] text-white mt-8 m-2 border-0 hover:bg-[#7EA1FF] hover:text-black" onClick={() => document.getElementById('my_modal_5').showModal()}>Add coupon</button>
             </div>
 
 
@@ -70,14 +70,14 @@ const Coupon = () => {
 
                     <div>
                         <div className="flex items-center justify-center text-center">
-                            <form onSubmit={handleSubmit}  className="flex flex-col w-full max-w-lg p-12 space-y-1">
-                                <label className="self-start text-xs font-semibold">Coupon code</label>
+                            <form onSubmit={handleSubmit}  className="flex flex-col w-full max-w-lg p-12 space-y-1 ">
+                                <label className="self-start text-xs font-semibold ">Coupon code</label>
                                 <input name="coupon" className="flex items-center h-12 px-4 mt-2 rounded border border-black  focus:outline-none" placeholder="Coupon code" required/>
                                 <label className="self-start text-xs font-semibold">Discount</label>
                                 <input name="discount" className="flex items-center h-12 px-4 mt-2 rounded border border-black  focus:outline-none" placeholder="Discount" required/>
                                 <label className="self-start text-xs font-semibold">Description</label>
                                 <input name="description"  className="flex items-center h-12 px-4 mt-2 rounded border border-black  focus:outline-none" placeholder="Description" required/>
-                               <button className="btn bg-[#7EA1FF]">Submit</button>
+                               <button className="btn bg-[#7EA1FF] hover:bg-[#E49BFF] hover:text-white">Submit</button>
                             </form>
                         </div>
                     </div>

@@ -38,13 +38,13 @@ const Building = () => {
                     <div className="grid grid-cols-2 gap-6 lg:w-1/2">
 
                     <img data-aos="zoom-in" data-aos-duration="1000"
-                     alt="" className="w-full  rounded shadow-sm h-72 aspect-square" src="https://images.unsplash.com/photo-1542447139-dea0a6257cee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8QXJjaGl0ZWN0dXJhbCUyMEV4Y2VsbGVuY2V8ZW58MHx8MHx8fDA%3D" />
-                    <img data-aos="zoom-in" data-aos-duration="1000"  data-aos-delay="200"
-                     alt="" className="w-full  rounded shadow-sm h-72 aspect-square" src={img1} />
-                    <img data-aos="zoom-in" data-aos-duration="1000"  data-aos-delay="300" 
-                     alt="" className="w-full  rounded shadow-sm h-72 aspect-square" src={img2} />
-                    <img data-aos="zoom-in" data-aos-duration="1000"  data-aos-delay="400"
-                     alt="" className="w-full  rounded shadow-sm h-72 aspect-square" src={img3} />
+                     alt="" className="w-full  rounded shadow-sm md:h-72 aspect-square" src="https://images.unsplash.com/photo-1542447139-dea0a6257cee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8QXJjaGl0ZWN0dXJhbCUyMEV4Y2VsbGVuY2V8ZW58MHx8MHx8fDA%3D" />
+                    <img data-aos="zoom-in" data-aos-duration="1000"  data-aos-delay="100"
+                     alt="" className="w-full  rounded shadow-sm md:h-72 aspect-square" src={img1} />
+                    <img data-aos="zoom-in" data-aos-duration="1000"  data-aos-delay="200" 
+                     alt="" className="w-full  rounded shadow-sm md:h-72 aspect-square" src={img2} />
+                    <img data-aos="zoom-in" data-aos-duration="1000"  data-aos-delay="300"
+                     alt="" className="w-full  rounded shadow-sm md:h-72 aspect-square" src={img3} />
 
                     </div>
 

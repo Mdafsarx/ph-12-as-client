@@ -32,7 +32,7 @@ const Banner = () => {
                         <div className='bg-gradient-to-r from-[#00000066] to-[#00000066] min-h-screen '>
                             <div className='flex flex-col items-center justify-center min-h-[75vh]'>
                                 <h1 className='text-3xl text-white'>____More details____</h1>
-                                <p className='text-white text-center text-xl md:text-5xl font-black font-serif text-balance'>Good management consists in <br />showing average people how to do <br /> the work of superior people.</p>
+                                <p className='text-white text-center text-lg md:text-5xl font-black font-serif text-balance'>Good management consists in <br />showing average people how to do <br /> the work of superior people.</p>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@ const Banner = () => {
                         <div className='bg-gradient-to-r from-[#00000066] to-[#00000066] min-h-screen '>
                             <div className='flex flex-col items-center justify-center min-h-[75vh]'>
                                 <h1 className='text-3xl text-white'>____More details____</h1>
-                                <p className='text-white text-center text-2xl md:text-5xl  font-black font-serif'>Good management consists in <br />showing average people how to do <br /> the work of superior people.</p>
+                                <p className='text-white text-center text-lg md:text-5xl  font-black font-serif text-balance'>Good management consists in <br />showing average people how to do <br /> the work of superior people.</p>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@ const Banner = () => {
                         <div className='bg-gradient-to-r from-[#00000066] to-[#00000066] min-h-screen '>
                             <div className='flex flex-col items-center justify-center min-h-[75vh]'>
                                 <h1 className='text-3xl text-white'>____More details____</h1>
-                                <p className='text-white text-center text-2xl md:text-5xl  *: font-black font-serif'>Good management consists in <br />showing average people how to do <br /> the work of superior people.</p>
+                                <p className='text-white text-center text-lg md:text-5xl  *: font-black font-serif text-balance'>Good management consists in <br />showing average people how to do <br /> the work of superior people.</p>
                             </div>
                         </div>
 

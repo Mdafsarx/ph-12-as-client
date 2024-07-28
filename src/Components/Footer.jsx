@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 const Footer = () => {
     return (
         <div className="bg-black">
-            <footer className="footer p-10  text-white md:pl-40">
+            <footer className="footer p-7 md:p-10  text-white md:pl-40">
 
                 <nav>
                     <aside>
@@ -45,14 +45,14 @@ const Footer = () => {
                       });
                       e.target.reset()
                 }}>
-                    <h6 className="footer-title">Newsletter</h6>
-                    <fieldset className="form-control w-80">
+                    <h6 className="footer-title hidden md:block">Newsletter</h6>
+                    <fieldset className="form-control w-80 hidden md:block">
                         <label className="label">
                             <span className="text-white">Enter your email address</span>
                         </label>
                         <div className="join">
                             <input type="email" name="email" placeholder="username@site.com" className="input outline-none focus:outline-0  join-item text-black"  />
-                            <button className="btn bg-[#7EA1FF] border-0 text-white hover:text-black join-item hover:bg-[#E49BFF]">Subscribe</button>
+                            <button className="btn  bg-[#7EA1FF] border-0 text-white hover:text-black join-item hover:bg-[#E49BFF]">Subscribe</button>
                         </div>
                     </fieldset>
                 </form>

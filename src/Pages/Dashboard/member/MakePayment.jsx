@@ -31,12 +31,12 @@ const MakePayment = () => {
 
 
     return (
-        <div className="p-2 my-28">
+        <div className="p-2 mt-10 md:my-28">
 
             {
                 data.length === 0
                     ?
-                    <div>
+                    <div className="mx-10">
                        <Empty text={'There is nothing to pay$'} btnText={'Apartment'} link={'/apartment'}/>
                     </div>
                     :
@@ -78,7 +78,7 @@ const MakePayment = () => {
                                     </div>
 
                                     <div className="col-span-full sm:col-span-2">
-                                        <label className="text-sm uppercase">Which  month’s rent you want to pay</label>
+                                        <label className="text-sm uppercase ">Which  month’s rent you want to pay</label>
                                         <input id="month" type="number" min={mount1||mount} max={12} placeholder="Enter the month number" className="w-full rounded-md text-black pl-1 " required />
                                     </div>
 
@@ -86,7 +86,7 @@ const MakePayment = () => {
 
 
                                     <div className=" col-span-full">
-                                        <button className="btn btn-block bg-[#7EA1FF] text-white border-0">
+                                        <button className="btn btn-block bg-[#7EA1FF] hover:bg-[#E49BFF] hover:text-black text-white border-0">
                                             Pay$
                                         </button>
                                     </div>

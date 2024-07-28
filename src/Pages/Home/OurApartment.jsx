@@ -25,7 +25,8 @@ const OurApartment = () => {
                     <li className="flex items-center gap-0.5"><MdNumbers /><span className="font-bold">Postal Code:</span> 3100</li>
                     <li className="flex items-center gap-0.5"><TbWorld /><span className="font-bold">Country:</span> Bangladesh</li>
                     <li className="flex items-center gap-0.5"><MdNumbers /><span className="font-bold">Postal Code:</span> 3100</li>
-                    <li className="flex items-center gap-0.5"><FaLandmark /><span className="font-bold">Landmark:</span> Near Bangladesh bank school</li>
+                    <li className="hidden md:flex items-center gap-0.5"><FaLandmark />
+                    <span className="font-bold">Landmark:</span> Near Bangladesh bank school</li>
                 </ul>
 
             </div>
@@ -37,16 +38,16 @@ const OurApartment = () => {
 
 
             <div className="grid grid-cols-2 gap-4">
-                <img src={img1} className="h-52 rounded-xl"  data-aos="zoom-in" data-aos-duration="1500" />
-                <img src={img2} className="h-52 rounded-xl"  data-aos="zoom-in" data-aos-duration="1500"  data-aos-delay="300"/>
-                <img src={img3} className="h-52 rounded-xl"  data-aos="zoom-in" data-aos-duration="1500"  data-aos-delay="600"/>
-                <img src={img4} className="h-52 rounded-xl"  data-aos="zoom-in" data-aos-duration="1500"  data-aos-delay="900"/>
+                <img src={img1} className="md:h-52 rounded-xl"  data-aos="zoom-in" data-aos-duration="1500" />
+                <img src={img2} className="md:h-52 rounded-xl"  data-aos="zoom-in" data-aos-duration="1500"  data-aos-delay="300"/>
+                <img src={img3} className="md:h-52 rounded-xl"  data-aos="zoom-in" data-aos-duration="1500"  data-aos-delay="600"/>
+                <img src={img4} className="md:h-52 rounded-xl"  data-aos="zoom-in" data-aos-duration="1500"  data-aos-delay="900"/>
             </div>
 
 
             <div className="space-y-3 flex flex-col justify-center" data-aos="fade-left" data-aos-duration="1500">
                 <h1 className="text-3xl font-bold text-[#E49BFF] uppercase text-balance">Find us on <br /> <span className="text-[#7EA1FF]">the map</span></h1>
-                <p className="text-lg">Just moved in and already feeling <br />like the monarch of my tiny  kingdom 🏰✨ <br /> Sometimes, the smallest spaces spark <br />the biggest dreams.</p>
+                <p className="text-lg text-pretty">Just moved in and already feeling <br />like the monarch of my tiny  kingdom 🏰✨ <br /> Sometimes, the smallest spaces spark <br />the biggest dreams.</p>
                 <a href="https://www.google.com/maps/place/Sylhet/@24.8999805,91.8198358,13z/data=!3m1!4b1!4m6!3m5!1s0x375054d3d270329f:0xf58ef93431f67382!8m2!3d24.9047808!4d91.8600079!16zL20vMDJ0ZDJ4?entry=ttu" 
                  target="_blank"
                 className="btn font-bold bg-[#7EA1FF] hover:bg-[#E49BFF] text-white hover:text-black w-32 border-none group">Find us <GoLocation className="text-2xl text-[#AF47D2] group-hover:text-[#5c88ff]"/></a>

@@ -32,7 +32,7 @@ const PaymentHistory = () => {
     return (
         <div className="px-20 md:px-10 pt-5">
 
-            <form onSubmit={handleSearch} className="py-5">
+            <form onSubmit={handleSearch} className="py-5 text-black">
                 <fieldset className="space-y-1 mx-auto">
                     <label htmlFor="Search" className="hidden">Search</label>
                     <div className="relative">

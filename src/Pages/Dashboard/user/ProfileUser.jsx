@@ -33,21 +33,22 @@ const Profile = () => {
 
 
 
-            <div className="p-10 md:ml-40 lg:ml-0 lg:p-14 space-y-10 ">
+            <div className="py-10 md:py-0 px-5 md:px-0 md:p-10 space-y-10 ">
 
                 {/* profile */}
                 <div data-aos="fade-down" data-aos-duration="1500">
-                    <h1 className="text-xl md:text-2xl font-bold pb-4 text-start pl-2 uppercase "><span className="text-[#E49BFF]">PROFILE</span></h1>
+
+                    <h1 className="text-sm md:text-2xl font-bold pb-4 text-start pl-2 uppercase "><span className="text-[#E49BFF]">PROFILE</span></h1>
                     <div className="p-8 flex flex-col items-center md:flex-row gap-5 shadow-lg rounded-lg border">
                         <div>
-                            <img src={user?.photoURL} className="rounded-lg size-36" />
+                            <img src={user?.photoURL} className="rounded-lg md:size-36" />
                         </div>
                         <div className="flex flex-col space-y-4">
                             <div>
-                                <h2 className="text-2xl font-semibold">{user?.displayName}</h2>
+                                <h2 className="text-sm uppercase md:text-2xl font-semibold">{user?.displayName}</h2>
                             </div>
-                            <div className="space-y-1">
-                                <span className="flex items-center space-x-2">
+                            <div className="md:space-y-1">
+                                <span className="flex items-center space-x-2 hidden md:block">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Email address" className="w-4 h-4">
                                         <path fill="currentColor" d="M274.6,25.623a32.006,32.006,0,0,0-37.2,0L16,183.766V496H496V183.766ZM464,402.693,339.97,322.96,464,226.492ZM256,51.662,454.429,193.4,311.434,304.615,256,268.979l-55.434,35.636L57.571,193.4ZM48,226.492,172.03,322.96,48,402.693ZM464,464H48V440.735L256,307.021,464,440.735Z"></path>
                                     </svg>
@@ -57,19 +58,19 @@ const Profile = () => {
                                     <SiFirebase />
                                     <span className="">{user?.providerId}</span>
                                 </span>
-                                <span className="flex items-center space-x-2">
-                                    <span className="font-bold">Type:</span>
+                                <span className="flex items-center md:space-x-2">
+                                    <span className="font-bold hidden md:block">Type:</span>
                                     <span className="flex items-center"><BiUser />{role}</span>
                                 </span>
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
 
                 {/* agreement */}
                 <div className="text-black"  data-aos="fade-up" data-aos-duration="1500">
-                    <h1 className=" text-xl md:text-2xl font-bold pb-4 text-center md:text-start pl-2 uppercase"><span className="text-[#7EA1FF]">Agreement accept info</span></h1>
+                    <h1 className=" text-sm md:text-2xl font-bold pb-4 text-center md:text-start pl-2 uppercase"><span className="text-[#7EA1FF]">Agreement accept info</span></h1>
                     <div className="flex bg-base-100 shadow-xl border rounded-lg">
                         <div className="flex-1 p-4">
                             <div className="h-10 flex items-center justify-center gap-2 mx-auto px-4 ">

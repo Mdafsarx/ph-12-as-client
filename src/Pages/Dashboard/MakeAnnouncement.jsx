@@ -30,7 +30,8 @@ const MakeAnnouncement = () => {
 
 
     return (
-        <div className="px-20 md:px-80 lg:px-0 flex flex-col md:flex-row items-center  gap-0">
+        <div className="flex flex-col md:flex-row items-center  gap-0  w-[85vw] md:w-auto">
+
             <div className="lg:w-1/2 min-h-[calc(100vh-56px)]" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="200">
                 {/* form */}
                 <div className="flex items-center max-w-sm mx-auto justify-center text-center ">
@@ -43,7 +44,6 @@ const MakeAnnouncement = () => {
                         <button type="submit" className="btn btn-block bg-[#7EA1FF] text-white border-0 hover:bg-[#E49BFF] hover:text-black">Submit</button>
                     </form>
                 </div>
-
             </div>
 
             <div data-aos="fade-left" data-aos-duration="2000" data-aos-delay="200"

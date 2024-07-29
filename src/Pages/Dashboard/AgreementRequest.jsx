@@ -69,17 +69,17 @@ const AgreementRequest = () => {
 
 
     return (
-        <div className="p-10">
-            <div className="max-w-4xl mx-auto"  >
-                <h1 className="text-center text-2xl font-serif text-[#E49BFF] ">Agreement Request ({agreementData.length})</h1>
+        <div className="p-10 flex justify-center w-[85vw] md:w-auto">
+            <div className="max-w-4xl mx-auto text-black"  >
+                <h1 className="text-center text-sm  md:text-2xl font-serif text-[#E49BFF] ">Agreement Request ({agreementData.length})</h1>
 
                 <div className="my-10" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="1000">
 
                     {
                         agreementData?.map((data, i) =>
-                            <div key={i} className="flex bg-base-100 shadow-xl border" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="1000">
+                            <div key={i} className="flex bg-base-100 shadow-xl border rounded-md" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="1000">
 
-                                <figure><img src={data?.image} className="w-64 h-full hidden md:block" /></figure>
+                                <figure><img src={data?.image} className="w-64 h-full hidden md:block rounded-l-md" /></figure>
 
                                 <div className="flex-1 p-4">
 

@@ -8,6 +8,7 @@ import { FaUsers } from "react-icons/fa";
 import UseRooms from "../../Hooks/UserRooms";
 import useAvailable from "../../Hooks/useAvailable";
 import useUser from "../../Hooks/useUser";
+import "./user/responsive.css"
 
 const AdminProfile = () => {
 
@@ -19,31 +20,31 @@ const AdminProfile = () => {
     const [AvailableRooms,Unavailable]=useAvailable();
 
     return (
-        <div className="px-14 p-2 md:p-20 max-w-5xl mx-auto space-y-10 ">
+        <div className="p-14 md:p-20 max-w-5xl mx-auto space-y-10 flex flex-col items-center w-[82vw] ">
 
-            <div >
-                <h1 className="text-2xl font-bold pb-4 text-center pl-2 uppercase "><span className="text-[#E49BFF]">PROFILE</span></h1>
+            <div>
+                <h1 className="text-sm md:text-2xl font-bold pb-4 text-center pl-2 uppercase "><span className="text-[#E49BFF]">PROFILE</span></h1>
                 <div className="p-8 flex flex-col items-center md:flex-row gap-5 shadow-lg rounded-2xl border" data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="200">
                     <div>
-                        <img src={user?.photoURL} className="rounded-lg size-36" />
+                        <img src={user?.photoURL} className="rounded-lg md:size-36" />
                     </div>
-                    <div className="flex flex-col space-y-4">
+                    <div className="flex flex-col md:space-y-4">
                         <div>
-                            <h2 className="text-2xl font-semibold">{user?.displayName}</h2>
+                            <h2 className="text-sm md:text-2xl uppercase font-semibold">{user?.displayName}</h2>
                         </div>
                         <div className="space-y-1">
-                            <span className="flex items-center space-x-2">
+                            <span className="hidden md:flex items-center space-x-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Email address" className="w-4 h-4">
                                     <path fill="currentColor" d="M274.6,25.623a32.006,32.006,0,0,0-37.2,0L16,183.766V496H496V183.766ZM464,402.693,339.97,322.96,464,226.492ZM256,51.662,454.429,193.4,311.434,304.615,256,268.979l-55.434,35.636L57.571,193.4ZM48,226.492,172.03,322.96,48,402.693ZM464,464H48V440.735L256,307.021,464,440.735Z"></path>
                                 </svg>
                                 <span className="">{user?.email}</span>
                             </span>
-                            <span className="flex items-center space-x-2">
+                            <span className="flex items-center md:space-x-2">
                                 <SiFirebase />
                                 <span className="">{user?.providerId}</span>
                             </span>
-                            <span className="flex items-center space-x-2">
-                                <span className="font-bold">Type:</span>
+                            <span className="flex items-center  md:space-x-2">
+                                <span className="font-bold hidden md:block">Type:</span>
                                 <span className="flex items-center"><BiUser />{role}</span>
                             </span>
                         </div>

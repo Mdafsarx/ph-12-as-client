@@ -8,7 +8,9 @@ const MemberPrivate = ({children}) => {
     const location=useLocation();
 
     if(isPending){
-        return <div className="flex items-center justify-center min-h-[51.9vh]"><HashLoader color="#E49BFF" /></div>
+        return <div className="hidden md:flex items-center justify-center min-h-[51.9vh]">
+            <HashLoader color="#E49BFF" />
+            </div>
     }
 
     if(role==='member'){

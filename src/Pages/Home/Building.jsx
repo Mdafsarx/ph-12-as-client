@@ -7,7 +7,7 @@ const Building = () => {
     return (
         <div className="max-w-7xl mx-auto px-4 ">
 
-            <div className="text-center pt-14 pb-4">
+            <div className="text-center pt-16 pb-4">
                 <h1 className="text-3xl font-bold uppercase">About building</h1>
                 <p className="text-balance">Efficient building management ensures safe, <br /> sustainable, and comfortable environments through <br /> proactive  
                 maintenance, energy management,<br/> and advanced technology integration.</p>

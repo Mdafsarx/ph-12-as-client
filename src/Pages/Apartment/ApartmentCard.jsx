@@ -61,7 +61,7 @@ const ApartmentCard = ({ data }) => {
     return (
         <div  data-aos="zoom-in-up" data-aos-duration="1500"  data-aos-delay="100">
 
-            <div className="bg-[#10141E] *:text-white shadow-2xl hover:scale-105 rounded-xl ">
+            <div className="bg-white/10 *:text-white shadow-2xl hover:scale-105 duration-700 rounded-xl ">
 
                 <figure>
                     <img src={apartmentImage} alt={name} className="h-52 w-full rounded-t-xl" />
@@ -69,7 +69,7 @@ const ApartmentCard = ({ data }) => {
 
                 <div className="flex flex-col items-start  p-3">
 
-                    <div className="h-10 flex items-center gap-2 mx-auto bg-gray-100 shadow-md border px-4 -mt-8">
+                    <div className="h-10 flex items-center gap-2 mx-auto bg-[#303133] shadow-md border rounded-md px-4 -mt-8">
                         <span><BiBed /></span>
                         <span><TiWiFi /></span>
                         <span><FaCar /></span>
@@ -91,7 +91,7 @@ const ApartmentCard = ({ data }) => {
                 </div>
 
                 <div className="max-w-60 mx-auto pt-1 pb-4">
-                    <button className="btn btn-outline bg-[#E49BFF] hover:bg-[#7EA1FF] border-0 border-b-[5.5px] border-[#7EA1FF] hover:border-[#E49BFF] text-white shadow-md btn-block"
+                    <button className="btn btn-outline bg-[#E49BFF] hover:bg-[#7EA1FF] border-0 border-b-[5.5px] border-[#7EA1FF] hover:border-[#E49BFF] text-black shadow-md btn-block"
                         onClick={handleAgreement}
                     >Agreement</button>
                 </div>

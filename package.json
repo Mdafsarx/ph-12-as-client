@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@designory/hover-image": "^0.3.4",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.2.0",
     "@react-icons/all-files": "^4.1.0",
     "@stripe/react-stripe-js": "^2.7.1",
     "@stripe/stripe-js": "^3.5.0",
@@ -21,6 +24,7 @@
     "deck.gl": "^9.0.17",
     "firebase": "^10.12.2",
     "leaflet": "^1.9.4",
+    "lottie-react": "^2.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hot-toast": "^2.4.1",

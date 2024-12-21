@@ -1,51 +1,16 @@
-import { useState, useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
-
-delete L.Icon.Default.prototype._getIconUrl;
-
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-});
-
 const MyApartment = () => {
-  const [position, setPosition] = useState([51.505, -0.09]);
-
-  const LocationMarker = () => {
-    const map = useMap();
-
-    useEffect(() => {
-      navigator.geolocation.getCurrentPosition((pos) => {
-        const { latitude, longitude } = pos.coords;
-        const newPosition = [latitude, longitude];
-        setPosition(newPosition);
-        map.setView(newPosition, 13);
-      });
-    }, [map]);
-
-    return (
-      position && (
-        <Marker position={position}>
-        </Marker>
-      )
-    );
-  };
-
   return (
-    <div className=''>
-      <div className='w-full relative z-30 '>
-        <MapContainer center={position} zoom={13} scrollWheelZoom={false} style={{ height: '50vh', width: '100%'}}>
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          <LocationMarker />
-        </MapContainer>
-      </div>
-
+    <div className="overflow-hidden h-full rounded-lg">
+     <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d226.2100995363938!2d91.8875911652147!3d24.88564479573848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3751ab368c188439%3A0xbfa8ff575187304d!2sShahjalal%20Upashahar%2C%20Sylhet!5e0!3m2!1sen!2sbd!4v1734755690795!5m2!1sen!2sbd"
+        width="100%"
+        height="100%"
+        style={{ border: 0 }}
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Shahjalal Uposhahar Map"
+      ></iframe>
     </div>
   );
 };

@@ -9,7 +9,7 @@ const Coupons = () => {
 
 
     return (
-        <div className="max-w-7xl mx-auto py-12 space-y-10 ">
+        <div className="max-w-7xl mx-auto pt-6 space-y-14 ">
             {/* coupon title */}
             <div className='App'>
                 <h1 className="text-xl md:text-3xl font-bold text-white text-center" style={{ paddingTop: '5rem', margin: 'auto 0' }}>
@@ -30,7 +30,6 @@ const Coupons = () => {
             </div>
 
             {/* coupon ui */}
-
             <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mx-6 lg:mx-40 ">
 
                 <div className=" h-56 flex items-center gap-2 md:gap-8 shadow-2xl border rounded-md" data-aos="flip-right" data-aos-duration="1000">
@@ -85,7 +84,6 @@ const Coupons = () => {
                 </div>
 
             </section>
-
         </div>
     );
 };

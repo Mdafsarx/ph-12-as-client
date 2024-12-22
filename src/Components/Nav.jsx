@@ -1,7 +1,7 @@
 
 import { Link, NavLink } from "react-router-dom";
 import { BiHome, BiLogOut } from "react-icons/bi";
-import { MdApartment } from "react-icons/md";
+import { MdApartment, MdOutlineDashboard, MdSpaceDashboard } from "react-icons/md";
 import { TfiUnlock } from "react-icons/tfi";
 import { useState } from "react";
 import useAuth from "../Hooks/useAuth";
@@ -18,19 +18,19 @@ const Nav = () => {
 
     const navLink =
         <>
-            <NavLink data-aos="zoom-in" data-aos-duration="2000"  data-aos-delay="100"
+            <NavLink data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="100"
                 className={({ isActive }) => isActive ? `flex flex-col justify-center items-center text-white border-b-2 border-[#7EA1FF]` : `flex flex-col justify-center text-white items-center`} to={'/'}>
                 <BiHome className="text-sm text-[#7EA1FF] hidden lg:flex" /><span className="text-xs uppercase font-bold">HOME</span>
             </NavLink>
 
             <NavLink data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="400"
-             className={({ isActive }) => isActive ? `flex flex-col justify-center items-center text-white border-b-2 border-[#7EA1FF]` : `flex flex-col justify-center text-white items-center`} to={'/apartment'}>
+                className={({ isActive }) => isActive ? `flex flex-col justify-center items-center text-white border-b-2 border-[#7EA1FF]` : `flex flex-col justify-center text-white items-center`} to={'/apartment'}>
                 <MdApartment className="text-sm text-[#7EA1FF] hidden lg:flex" />
                 <span className="text-xs uppercase font-bold">Apartment</span>
             </NavLink>
 
             <NavLink data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="600"
-             className={'flex flex-col justify-center items-center text-white'} to={role === 'user' ? '/dashboard/user-Profile' : role === 'member' ? '/dashboard/member-Profile' : '/dashboard/admin-Profile'}>
+                className={'flex flex-col justify-center items-center text-white'} to={role === 'user' ? '/dashboard/user-Profile' : role === 'member' ? '/dashboard/member-Profile' : '/dashboard/admin-Profile'}>
                 <MdApartment className="text-sm text-[#7EA1FF] hidden lg:flex" />
                 <span className="text-xs uppercase font-bold">Dashboard</span>
             </NavLink>
@@ -40,8 +40,8 @@ const Nav = () => {
     return (
         <div>
             <section className=" bg-black opacity-85 relative md:fixed  w-full z-40">
-                <div className="navbar max-w-7xl mx-auto">
-                    
+                <div className="navbar px-12">
+
                     <div className="navbar-start">
 
                         <div className="dropdown" >
@@ -83,15 +83,35 @@ const Nav = () => {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <ul tabIndex={0} className={`dropdown-content z-50 menu p-2 shadow bg-base-100 rounded-box w-auto mt-4 
-                                                      ${isShow ? '' : 'hidden'}`}>
-                                                        <img src={user?.photoURL} className="w-14 h-14 mx-auto rounded-full" />
-                                                        <h1 className="text-center font-bold">{user?.displayName}</h1>
-                                                        <div className="flex justify-center items-center gap-0.5 p-1 mt-1 cursor-pointer hover:underline" onClick={() => {
-                                                            logout()
-                                                                .then(() => toast.success('Logout successful'))
-                                                                .catch((error) => toast.error(error.message))
-                                                        }}><BiLogOut className="text-xl" />Logout</div>
+                                                    <ul tabIndex={0} className={`dropdown-content z-50 border-x border-[#7EA1FF99] bg-[#181A1CCC] w-80 mt-4 rounded-md text-white 
+                                                        ${isShow ? '' : 'hidden'}`}>
+                                                        {/* 1 image and name/email */}
+                                                        <div className="flex items-center gap-3 border-b border-[#7EA1FF99] p-3.5">
+                                                            <figure>
+                                                                <img src={user?.photoURL} className="w-10 h-10 rounded-full" referrerPolicy="no-referrer" />
+                                                            </figure>
+                                                            <div className="text-xs space-y-1">
+                                                                <h1 className="font-bold">{user?.displayName}</h1>
+                                                                <h1 className="font-bold">{user?.email || 'No email provided'}</h1>
+                                                            </div>
+                                                        </div>
+                                                        {/* 2 dashboard */}
+                                                        <div>
+                                                            <Link to={role === 'user' ? '/dashboard/user-Profile' : role === 'member' ? '/dashboard/member-Profile' : '/dashboard/admin-Profile'}
+                                                                className="flex items-center font-bold gap-7 p-3.5 pl-[26px] cursor-pointer border-b border-[#7EA1FF99] hover:bg-[#181A1C]">
+                                                                <MdSpaceDashboard className="text-lg" /><span className="text-xs">Dashboard</span>
+                                                            </Link>
+                                                        </div>
+                                                        {/* logout button */}
+                                                        <div>
+                                                            <p onClick={() => {
+                                                                logout()
+                                                                    .then(() => toast.success('Logout successful'))
+                                                                    .catch((error) => toast.error(error.message))
+                                                            }}
+                                                                className="flex items-center font-bold gap-8 p-3.5 pl-[24px] cursor-pointer hover:rounded-b-md hover:bg-[#181A1C]"><BiLogOut className="text-lg" /> <span className="text-xs">Logout</span>
+                                                            </p>
+                                                        </div>
                                                     </ul>
                                                 </div>
                                                 :

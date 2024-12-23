@@ -4,7 +4,7 @@ import { IoCall } from "react-icons/io5";
 import Swal from "sweetalert2";
 const Footer = () => {
     return (
-        <div className="bg-black">
+        <div className="border-t border-[#7EA1FF]">
             <footer className="footer p-7 md:p-10  text-white md:pl-40">
 
                 <nav>

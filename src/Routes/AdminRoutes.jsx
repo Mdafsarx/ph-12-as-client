@@ -4,26 +4,35 @@ import { FiFile } from "react-icons/fi";
 import { ImProfile } from "react-icons/im";
 import { RiCoupon2Fill } from "react-icons/ri";
 import { TfiAnnouncement } from "react-icons/tfi";
+import { useSelector } from "react-redux";
+
 
 const AdminRoutes = () => {
+
+    const isOpen = useSelector(state => state.open.value)
+
     return (
-        <>
-            <NavLink  data-aos="fade-right" data-aos-duration="2000" 
-             className={({isActive})=>isActive?
-            `flex items-center text-sm gap-1 text-[#7EA1FF] `:`flex items-center text-sm gap-1 hover:text-[#7EA1FF]`} to={'/dashboard/admin-Profile'}><ImProfile /> <span className="hidden lg:block">Admin Profile</span></NavLink>
-            <NavLink data-aos="fade-right" data-aos-duration="2000" data-aos-delay="200"
-            className={({isActive})=>isActive?
-            `flex items-center text-sm gap-1 text-[#7EA1FF] `:`flex items-center text-sm gap-1 hover:text-[#7EA1FF]`} to={'/dashboard/manage-Member'}><BsPeople /><span className="hidden lg:flex">Manage Member </span></NavLink>
-            <NavLink data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400"
-            className={({isActive})=>isActive?
-            `flex items-center text-sm gap-1 text-[#7EA1FF] `:`flex items-center text-sm gap-1 hover:text-[#7EA1FF]`} to={'/dashboard/Make-Announcement'}><TfiAnnouncement /> <span className="hidden lg:flex">Make Announcement</span></NavLink>
-            <NavLink data-aos="fade-right" data-aos-duration="2000" data-aos-delay="600"
-            className={({isActive})=>isActive?
-            `flex items-center text-sm gap-1 text-[#7EA1FF] `:`flex items-center text-sm gap-1 hover:text-[#7EA1FF]`} to={'/dashboard/Agreement-Request'}><FiFile /><span className="hidden lg:flex">Agreement Requests</span></NavLink>
-            <NavLink data-aos="fade-right" data-aos-duration="2000" data-aos-delay="800"
-            className={({isActive})=>isActive?
-            `flex items-center text-sm gap-1 text-[#7EA1FF] `:`flex items-center text-sm gap-1 hover:text-[#7EA1FF]`} to={'/dashboard/coupon'}><RiCoupon2Fill /><span className="hidden lg:flex">Manage Coupons</span></NavLink>
-        </>
+        <div className="space-y-3">
+            <NavLink to={'/dashboard/admin-Profile'} className={({ isActive }) => isActive ? `bg-gradient-to-r from-[#E49BFF66]  via-[#7EA1FF66]  to-[#7EA1FFCC] hover:scale-105 hover:duration-300 shadow-sm rounded-md flex items-center gap-x-2  p-1.5 ${isOpen && 'pl-2.5'}` : `flex items-center gap-x-2  p-1.5 ${isOpen && 'pl-2.5'}`}>
+                <ImProfile className="text-lg" />  {isOpen && 'Profile'}
+            </NavLink>
+
+            <NavLink to={'/dashboard/manage-Member'} className={({ isActive }) => isActive ? `bg-gradient-to-r from-[#E49BFF66]  via-[#7EA1FF66]  to-[#7EA1FFCC] hover:scale-105 hover:duration-300 shadow-sm rounded-md flex items-center gap-x-2  p-1.5 ${isOpen && 'pl-2.5'}` : `flex items-center gap-x-2  p-1.5 ${isOpen && 'pl-2.5'}`}>
+                <BsPeople className="text-lg" />  {isOpen && 'Members'}
+            </NavLink>
+
+            <NavLink to={'/dashboard/Make-Announcement'} className={({ isActive }) => isActive ? `bg-gradient-to-r from-[#E49BFF66]  via-[#7EA1FF66]  to-[#7EA1FFCC] hover:scale-105 hover:duration-300 shadow-sm rounded-md flex items-center gap-x-2  p-1.5 ${isOpen && 'pl-2.5'}` : `flex items-center gap-x-2  p-1.5 ${isOpen && 'pl-2.5'}`}>
+                <TfiAnnouncement className="text-lg" />  {isOpen && 'Announcement'}
+            </NavLink>
+
+            <NavLink to={'/dashboard/Agreement-Request'} className={({ isActive }) => isActive ? `bg-gradient-to-r from-[#E49BFF66]  via-[#7EA1FF66]  to-[#7EA1FFCC] hover:scale-105 hover:duration-300 shadow-sm rounded-md flex items-center gap-x-2  p-1.5 ${isOpen && 'pl-2.5'}` : `flex items-center gap-x-2  p-1.5 ${isOpen && 'pl-2.5'}`}>
+                <FiFile className="text-lg" />  {isOpen && 'Agreement'}
+            </NavLink>
+
+            <NavLink to={'/dashboard/coupon'} className={({ isActive }) => isActive ? `bg-gradient-to-r from-[#E49BFF66]  via-[#7EA1FF66]  to-[#7EA1FFCC] hover:scale-105 hover:duration-300 shadow-sm rounded-md flex items-center gap-x-2  p-1.5 ${isOpen && 'pl-2.5'}` : `flex items-center gap-x-2  p-1.5 ${isOpen && 'pl-2.5'}`}>
+                <RiCoupon2Fill className="text-lg" />  {isOpen && 'Coupons'}
+            </NavLink>
+        </div>
     );
 };
 

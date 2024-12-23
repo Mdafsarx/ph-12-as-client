@@ -1,21 +1,25 @@
 import { NavLink } from "react-router-dom";
 import { TiHomeOutline } from "react-icons/ti";
 import { GrAnnounce } from "react-icons/gr";
+import { useSelector } from "react-redux";
 
 
 
 const UserRoutes = () => {
+
+    const isOpen = useSelector(state => state.open.value)
+
     return (
-        <>
-            <NavLink data-aos="fade-right" data-aos-duration="2000" data-aos-delay="200"
-                className={({ isActive }) => isActive ?
-                    `flex items-center text-sm gap-1 text-[#7EA1FF] ` : `flex items-center text-sm gap-1 hover:text-[#7EA1FF]`}
-                to={'/dashboard/user-Profile'}><TiHomeOutline /><span className="hidden lg:block">My Profile</span></NavLink>
-            <NavLink data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400"
-                className={({ isActive }) => isActive ?
-                    `flex items-center text-sm gap-1 text-[#7EA1FF] ` : `flex items-center text-sm gap-1 hover:text-[#7EA1FF]`}
-                to={'/dashboard/Announcement'}><GrAnnounce /><span className="hidden lg:block">Announcement</span></NavLink>
-        </>
+        <div className="space-y-3">
+            <NavLink to={'/dashboard/user-Profile'} className={({ isActive }) => isActive ? `bg-gradient-to-r from-[#E49BFF66]  via-[#7EA1FF66]  to-[#7EA1FFCC] hover:scale-105 hover:duration-300 shadow-sm rounded-md flex items-center gap-x-2  p-1.5 ${isOpen && 'pl-2.5'}` : `flex items-center gap-x-2  p-1.5 ${isOpen && 'pl-2.5'}`}>
+                <TiHomeOutline className="text-lg"/>  {isOpen && 'Profile'}
+            </NavLink>
+
+
+            <NavLink to={'/dashboard/Announcement'} className={({ isActive }) => isActive ? `bg-gradient-to-r from-[#E49BFF66]  via-[#7EA1FF66]  to-[#7EA1FFCC] hover:scale-105 hover:duration-300 shadow-sm rounded-md flex items-center gap-x-2  p-1.5 ${isOpen && 'pl-2.5'}` : `flex items-center gap-x-2  p-1.5 ${isOpen && 'pl-2.5'}`}>
+                <GrAnnounce className="text-lg" />  {isOpen && 'Announcement'}
+            </NavLink>
+        </div>
     );
 };
 

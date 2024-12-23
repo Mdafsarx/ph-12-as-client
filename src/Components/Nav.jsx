@@ -9,6 +9,8 @@ import { CiMenuBurger } from "react-icons/ci";
 import toast from "react-hot-toast";
 import { HashLoader } from "react-spinners";
 import useRole from "../Hooks/useRole";
+import { LuContact } from "react-icons/lu";
+
 
 const Nav = () => {
     const [open, setOpen] = useState(false);
@@ -30,16 +32,16 @@ const Nav = () => {
             </NavLink>
 
             <NavLink data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="600"
-                className={'flex flex-col justify-center items-center text-white'} to={role === 'user' ? '/dashboard/user-Profile' : role === 'member' ? '/dashboard/member-Profile' : '/dashboard/admin-Profile'}>
-                <MdApartment className="text-sm text-[#7EA1FF] hidden lg:flex" />
-                <span className="text-xs uppercase font-bold">Dashboard</span>
+                className={'flex flex-col justify-center items-center text-white'} to={'/contact'}>
+                <LuContact className="text-sm text-[#7EA1FF] hidden lg:flex" />
+                <span className="text-xs uppercase font-bold">Contact</span>
             </NavLink>
         </>
 
 
     return (
         <div>
-            <section className=" bg-black opacity-85 relative md:fixed  w-full z-40">
+            <section className="bg-[#00000099] relative md:fixed  w-full z-40">
                 <div className="navbar px-12">
 
                     <div className="navbar-start">
@@ -75,15 +77,15 @@ const Nav = () => {
                                             user
                                                 ?
                                                 <div className="dropdown dropdown-end  ">
-                                                    <div tabIndex={0} role="button" onClick={() => setIsShow(!isShow)} className="flex items-center gap-2 bg-slate-100 rounded-lg p-1.5">
-                                                        <CiMenuBurger />
+                                                    <div tabIndex={0} role="button" onClick={() => setIsShow(!isShow)} className="flex items-center gap-2 bg-[#ffffff] rounded-lg p-1.5">
+                                                        <CiMenuBurger className="text-black" />
                                                         <div className="avatar">
                                                             <div className="w-8 rounded-full ring ring-[#7EA1FF] ring-offset-base-100 ">
                                                                 <img src={user?.photoURL} />
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <ul tabIndex={0} className={`dropdown-content z-50 border-x border-[#7EA1FF99] bg-[#181A1CCC] w-80 mt-4 rounded-md text-white 
+                                                    <ul tabIndex={0} className={`dropdown-content z-50 border-x border-[#7EA1FF99] bg-[#15151AE6] w-80 mt-4 rounded-md text-white 
                                                         ${isShow ? '' : 'hidden'}`}>
                                                         {/* 1 image and name/email */}
                                                         <div className="flex items-center gap-3 border-b border-[#7EA1FF99] p-3.5">
@@ -98,7 +100,7 @@ const Nav = () => {
                                                         {/* 2 dashboard */}
                                                         <div>
                                                             <Link to={role === 'user' ? '/dashboard/user-Profile' : role === 'member' ? '/dashboard/member-Profile' : '/dashboard/admin-Profile'}
-                                                                className="flex items-center font-bold gap-7 p-3.5 pl-[26px] cursor-pointer border-b border-[#7EA1FF99] hover:bg-[#181A1C]">
+                                                                className="flex items-center font-bold gap-7 p-3.5 pl-[26px] cursor-pointer border-b border-[#7EA1FF99] hover:bg-[#14151B]">
                                                                 <MdSpaceDashboard className="text-lg" /><span className="text-xs">Dashboard</span>
                                                             </Link>
                                                         </div>
@@ -109,7 +111,7 @@ const Nav = () => {
                                                                     .then(() => toast.success('Logout successful'))
                                                                     .catch((error) => toast.error(error.message))
                                                             }}
-                                                                className="flex items-center font-bold gap-8 p-3.5 pl-[24px] cursor-pointer hover:rounded-b-md hover:bg-[#181A1C]"><BiLogOut className="text-lg" /> <span className="text-xs">Logout</span>
+                                                                className="flex items-center font-bold gap-8 p-3.5 pl-[24px] cursor-pointer hover:rounded-b-md hover:bg-[#14151B]"><BiLogOut className="text-lg" /> <span className="text-xs">Logout</span>
                                                             </p>
                                                         </div>
                                                     </ul>

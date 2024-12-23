@@ -8,20 +8,23 @@ import { Toaster } from 'react-hot-toast'
 const queryClient = new QueryClient()
 import AOS from 'aos';
 import MouseParticles from 'react-mouse-particles'
-import 'aos/dist/aos.css'; // You can also use <link> for styles
-// ..
+import 'aos/dist/aos.css'; 
+import { Provider } from 'react-redux'
+import store from './store/store'
 AOS.init();
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <div className='text-white  overflow-x-hidden overflow-y-hidden bg-[#040709EB] '>
-    <Auth>
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider router={route} />
-        <MouseParticles g={1} num={6} color={["#7EA1FF", "#E49BFF"]} cull="stats,image-wrapper" level={6} />
-      </QueryClientProvider>
-    </Auth>
+  <div className='text-white  overflow-x-hidden overflow-y-hidden bg-[#14151B]'>
+    <Provider store={store}>
+      <Auth>
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={route} />
+          <MouseParticles g={1} num={6} color={["#7EA1FF", "#E49BFF"]} cull="stats,image-wrapper" level={6} />
+        </QueryClientProvider>
+      </Auth>
+    </Provider>
     <Toaster />
   </div>,
 )

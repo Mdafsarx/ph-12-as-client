@@ -4,7 +4,7 @@ import { IoCall } from "react-icons/io5";
 import Swal from "sweetalert2";
 const Footer = () => {
     return (
-        <div className="border-t border-[#7EA1FF]">
+        <div className="bg-[#21232C]">
             <footer className="footer p-7 md:p-10  text-white md:pl-40">
 
                 <nav>
@@ -47,12 +47,9 @@ const Footer = () => {
                 }}>
                     <h6 className="footer-title hidden md:block">Newsletter</h6>
                     <fieldset className="form-control w-80 hidden md:block">
-                        <label className="label">
-                            <span className="text-white">Enter your email address</span>
-                        </label>
                         <div className="join">
-                            <input type="email" name="email" placeholder="username@site.com" className="input outline-none focus:outline-0  join-item text-black"  />
-                            <button className="btn  bg-[#7EA1FF] border-0 text-white hover:text-black join-item hover:bg-[#E49BFF]">Subscribe</button>
+                            <input type="email" name="email" placeholder="username@site.com" className="input outline-none focus:outline-0  join-item text-white bg-[#21232C] border-[#7EA1FF]"  />
+                            <button className="btn  bg-[#7EA1FF] hover:bg-[#7EA1FF] border-0 text-white join-item">Subscribe</button>
                         </div>
                     </fieldset>
                 </form>

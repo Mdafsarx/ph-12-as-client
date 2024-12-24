@@ -22,6 +22,7 @@ import MemberAndUser from "../Private/MemberAndUser";
 import ManageMember from "../Pages/Dashboard/ManageMember";
 import Coupon from "../Pages/Dashboard/Coupon";
 import AdminProfile from "../Pages/Dashboard/AdminProfile";
+import Contact from "../Pages/Contact/Contact";
 
 const route = createBrowserRouter([
     //   main layout
@@ -37,6 +38,10 @@ const route = createBrowserRouter([
             {
                 path: '/apartment',
                 element: <Apartment />
+            },
+            {
+                path: '/contact',
+                element: <Contact />
             },
 
         ]
@@ -63,7 +68,7 @@ const route = createBrowserRouter([
         children: [
             // admin
             {
-                path:'admin-Profile',
+                path: 'admin-Profile',
                 element: <Private><AdminPrivate><AdminProfile /></AdminPrivate></Private>
             },
             {
@@ -75,12 +80,12 @@ const route = createBrowserRouter([
                 element: <Private><AdminPrivate><AgreementRequest /></AdminPrivate></Private>
             },
             {
-              path:'manage-Member',
-              element: <Private><AdminPrivate><ManageMember /></AdminPrivate></Private>
+                path: 'manage-Member',
+                element: <Private><AdminPrivate><ManageMember /></AdminPrivate></Private>
             },
             {
-              path:'coupon',
-              element: <Private><AdminPrivate><Coupon /></AdminPrivate></Private>
+                path: 'coupon',
+                element: <Private><AdminPrivate><Coupon /></AdminPrivate></Private>
             },
             // user
             {
@@ -95,15 +100,15 @@ const route = createBrowserRouter([
             },
             {
                 path: 'make-Payment',
-                element:  <Private><MemberPrivate><MakePayment /></MemberPrivate></Private>
+                element: <Private><MemberPrivate><MakePayment /></MemberPrivate></Private>
             },
             {
                 path: 'payment-History',
-                element:  <Private><MemberPrivate> <PaymentHistory /></MemberPrivate></Private>
+                element: <Private><MemberPrivate> <PaymentHistory /></MemberPrivate></Private>
             },
             {
                 path: 'Payment/:month',
-                element:  <Private><MemberPrivate><Payment /></MemberPrivate></Private>
+                element: <Private><MemberPrivate><Payment /></MemberPrivate></Private>
             },
 
             // user and member route
